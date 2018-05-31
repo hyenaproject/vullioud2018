@@ -1,0 +1,31 @@
+Package: vullioud2018
+Type: Package
+Title: Analysis Of Dominance In Spotted Hyena
+Version: 0.1.0
+Author: Colin Vullioud [aut], 
+        Eve Davidian [aut], 
+        Bettina Wachter [aut], 
+        François Rousset [aut], 
+        Alexandre Courtiol [aut], 
+        Oliver P. Höner [aut]
+Description: This R package aims at documenting the workflow behind the results from the 
+    paper entitled "Social support drives female dominance in the spotted hyena" 
+    by Colin Vullioud, Eve Davidian, Bettina Wachter, François Rousset, 
+    Alexandre Courtiol and Oliver P. Höner (submitted). The main goal of the 
+    package is to fit GLMM models on interactions data with varying 
+    focal individuals (for more details see the method section of the article). 
+    This package has not been conceived for general use. It serves to document 
+    the steps of our analysis.
+Maintainer: Colin Vullioud <colino.vullioud@gmail.com>
+Depends: R (>= 2.10)
+License: GPL (>=2)
+Encoding: UTF-8
+LazyData: false
+RoxygenNote: 6.0.1
+Imports: dplyr,
+    ggplot2,
+    spaMM,
+    purrr,
+    magrittr, 
+    egg,  
+    ggthemes
