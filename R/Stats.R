@@ -12,7 +12,7 @@
 #' data(mod_sex_null_diff_PQL)
 #' get_predictions(mod_sex_null_diff_PQL)
 get_predictions <- function(model) {
-p <- predict.HLfit(model, intervals = "predVar", re.form = NA)
+p <- spaMM::predict.HLfit(model, intervals = "predVar", re.form = NA)
 y <- model$data
 y$pred <- p[,1]
 y$inf <- attr(p, "intervals")[,1]
@@ -37,7 +37,7 @@ return(y)
 #'get_AIC(mod_social_null_diff_PQL, "social_null_diff_PQL")
 get_AIC <- function(model, name) {
   dplyr::bind_cols(name = name,
-            AIC = AIC.HLfit(model)[1])
+            AIC = spaMM::AIC.HLfit(model)[1])
 
 }
 
@@ -57,7 +57,7 @@ get_AIC <- function(model, name) {
 #'get_TJUR(mod_sex_null_diff_PQL, "sex_null_PQL")
 get_TJUR <- function(model, name) {
   data <- model$data
-  data$pred <- predict.HLfit(model, re.form = NA)[, 1]
+  data$pred <- spaMM::predict.HLfit(model, re.form = NA)[, 1]
   out <- data.frame(name = name,
                     D_tjur = mean(ifelse(data$win, data$pred, 1- data$pred)) -
                       mean(ifelse(data$win == F, data$pred, 1- data$pred)))
@@ -82,5 +82,5 @@ get_TJUR <- function(model, name) {
 #'get_logLik(mod_sex_null_diff_PQL, "sex_null_PQL")
 get_logLik <- function(model, name) {
   dplyr::bind_cols(name = name,
-            loglik = logLik.HLfit(model))
+            loglik = spaMM::logLik.HLfit(model))
 }
