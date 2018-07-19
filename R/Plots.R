@@ -42,7 +42,7 @@ tt2 <- ggplot2::ggplot(DF, ggplot2::aes(time, y = relat,fill = time, col = time)
             check_overlap = T,
             family = "",
             fontface = "plain") +
-  ggplot2::geom_hline(yintercept = 6.3)
+  ggplot2::geom_hline(yintercept = 6.25)
 
 if(legend == FALSE) {
   tt2 <- tt2 +
