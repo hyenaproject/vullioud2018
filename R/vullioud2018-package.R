@@ -148,7 +148,9 @@
 #'### confidence interval around those prediction.
 #'
 #'data(mod_social_null_diff_PQL)
+#'\dontrun{
 #'get_predictions(mod_social_null_diff_PQL)
+#'}
 #'
 #'### - get_AIC() functions return the marginal AIC of the model
 #'x <- get_AIC(mod_social_null_diff_PQL, name = "mod_social_null_diff_PQL")
@@ -168,17 +170,17 @@
 #'###############
 #'### we present here the two plots of the main text.
 #'
-#'### PLOT1: the first plot represents the relatedness at different times
+#'### PLOT2: the second plot represents the relatedness at different times
 #'
 #'data(females_relat)
 #'data(migrants_relat)
 #'data(natives_relat)
 #'
-#'plot1(DF_female = females_relat,
+#'plot2(DF_female = females_relat,
 #'      DF_migrant = migrants_relat,
-#'      DF_native = natives_relat)
+#'      DF_native = natives_relat, PDF = TRUE)
 #'
-#'### PLOT2: the scond plots display the predictions of the five main models.
+#'### PLOT1: the first plots display the predictions of the five main models.
 #'
 #'data(mod_social_null_diff_PQL)
 #'data(mod_social_null_same_PQL)
@@ -186,11 +188,11 @@
 #'data(mod_mass_null_same_PQL)
 #'data(mod_sex_null_diff_PQL)
 #'
-#'plot2(
+#'plot1(
 #'mod_social_null_diff_PQL,
 #'mod_social_null_same_PQL,
 #'mod_mass_null_diff_PQL,
 #'mod_mass_null_same_PQL,
-#'mod_sex_null_diff_PQL
-#')
+#'mod_sex_null_diff_PQL, 
+#'PDF = TRUE)
 NULL
