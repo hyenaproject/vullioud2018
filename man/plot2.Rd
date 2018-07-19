@@ -2,35 +2,28 @@
 % Please edit documentation in R/Plots.R
 \name{plot2}
 \alias{plot2}
-\title{Plot2}
+\title{second plot}
 \usage{
-plot2(Mod_so_diff, Mod_so_same, Mod_mass_diff, Mod_mass_same, Mod_sex)
+plot2(DF_female, DF_migrant, DF_native, PDF)
 }
 \arguments{
-\item{Mod_so_diff, }{social model different sex}
+\item{DF_female, }{females_relat}
 
-\item{Mod_so_same, }{social model same sex}
+\item{DF_migrant, }{migrants_relat}
 
-\item{Mod_mass_diff, }{mass model different sex}
+\item{DF_native, }{natives_relat}
 
-\item{Mod_mass_same, }{mass model same sex}
-
-\item{Mod_sex, }{sex model diff sex}
+\item{PDF, }{a logical to return a PDF version of the plot}
 }
 \description{
-Creates the second plot of the paper
+Creates the second plot of the paper.
 }
 \examples{
-data(mod_social_null_diff_PQL)
-data(mod_social_null_same_PQL)
-data(mod_mass_null_diff_PQL)
-data(mod_mass_null_same_PQL)
-data(mod_sex_null_diff_PQL)
-plot2(
-mod_social_null_diff_PQL,
-mod_social_null_same_PQL,
-mod_mass_null_diff_PQL,
-mod_mass_null_same_PQL,
-mod_sex_null_diff_PQL
-)
+data(females_relat)
+data(migrants_relat)
+data(natives_relat)
+plot2(DF_female = females_relat,
+     DF_migrant = migrants_relat,
+     DF_native = natives_relat, 
+     PDF = TRUE)
 }

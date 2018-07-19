@@ -2,7 +2,7 @@
 % Please edit documentation in R/Plots.R
 \name{plot_intra_inter}
 \alias{plot_intra_inter}
-\title{Plot2 mass and social panels (used internally)}
+\title{Plot prediction for mass and social panels (used internally)}
 \usage{
 plot_intra_inter(DF)
 }

@@ -2,25 +2,37 @@
 % Please edit documentation in R/Plots.R
 \name{plot1}
 \alias{plot1}
-\title{plot1}
+\title{Plot1}
 \usage{
-plot1(DF_female, DF_migrant, DF_native)
+plot1(Mod_so_diff, Mod_so_same, Mod_mass_diff, Mod_mass_same, Mod_sex, PDF)
 }
 \arguments{
-\item{DF_female, }{females_relat}
+\item{Mod_so_diff, }{social model different sex}
 
-\item{DF_migrant, }{migrants_relat}
+\item{Mod_so_same, }{social model same sex}
 
-\item{DF_native, }{natives_relat}
+\item{Mod_mass_diff, }{mass model different sex}
+
+\item{Mod_mass_same, }{mass model same sex}
+
+\item{Mod_sex, }{sex model diff sex}
+
+\item{PDF, }{logical to return a PDF of the figure}
 }
 \description{
-Creates the plot1 of the paper.
+Creates the first plot of the paper
 }
 \examples{
-data(females_relat)
-data(migrants_relat)
-data(natives_relat)
-plot1(DF_female = females_relat,
-     DF_migrant = migrants_relat,
-     DF_native = natives_relat)
+data(mod_social_null_diff_PQL)
+data(mod_social_null_same_PQL)
+data(mod_mass_null_diff_PQL)
+data(mod_mass_null_same_PQL)
+data(mod_sex_null_diff_PQL)
+plot1(
+mod_social_null_diff_PQL,
+mod_social_null_same_PQL,
+mod_mass_null_diff_PQL,
+mod_mass_null_same_PQL,
+mod_sex_null_diff_PQL, 
+PDF = TRUE)
 }
