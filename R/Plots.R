@@ -42,7 +42,7 @@ tt2 <- ggplot2::ggplot(DF, ggplot2::aes(time, y = relat,fill = time, col = time)
             check_overlap = T,
             family = "",
             fontface = "plain") +
-  ggplot2::geom_hline(yintercept = 6.25)
+  ggplot2::geom_hline(yintercept = 6.25, size = 0.25)
 
 if(legend == FALSE) {
   tt2 <- tt2 +
@@ -50,13 +50,16 @@ if(legend == FALSE) {
     ggplot2::guides(color = FALSE, fill = FALSE) +
     ggplot2::theme(text = ggplot2::element_text(size = 7, 
                                                 family = "",
-                                                face = "plain") ,
-          axis.ticks.length = ggplot2::unit(1, "mm"),
+                                                face = "plain"),
           axis.title.x = ggplot2::element_blank(),
           plot.background = ggplot2::element_blank(),
           axis.title.y = ggplot2::element_blank(),
           axis.text.y = ggplot2::element_blank(),
-          axis.ticks.y = ggplot2::element_blank())
+          axis.ticks.y = ggplot2::element_blank(), 
+          axis.ticks.length = ggplot2::unit(0.5, "mm"),
+          axis.ticks = ggplot2::element_line(size = rel(0.4)),
+          panel.border = ggplot2::element_rect(size = 0.4), 
+          panel.background = element_blank())
 } else {
   tt2 <- tt2 +
     ggthemes::theme_base() +
@@ -64,9 +67,12 @@ if(legend == FALSE) {
     ggplot2::theme(text = ggplot2::element_text(size = 7, 
                                                 family = "",
                                                 face = "plain"),
-          axis.ticks.length = ggplot2::unit(1, "mm"),
           axis.title.x = ggplot2::element_blank(),
-          plot.background = ggplot2::element_blank())
+          plot.background = ggplot2::element_blank(), 
+          axis.ticks.length = ggplot2::unit(0.5, "mm"),
+          axis.ticks = ggplot2::element_line(size = rel(0.4)),
+          panel.border = ggplot2::element_rect(size = 0.4), 
+          panel.background = element_blank())
 }
 return(tt2)
 }
@@ -100,7 +106,7 @@ plot2 <- function(DF_female, DF_migrant, DF_native, PDF){
 Plot_F <- plot_relat_inside(DF_female,
                     legend = FALSE,
                     labels_x_axis = c("2.5 yrs of age", "4.5 yrs of age")) +
-  ggplot2::theme(plot.margin = ggplot2::margin(t = 3, r = 3, b = 3, l = 0, "pt"),
+  ggplot2::theme(plot.margin = ggplot2::margin(t = 4, r = 4, b = 4, l = 0, "pt"),
         axis.text.x = ggplot2::element_text(angle = 60,
                                             hjust = 1, 
                                             size = 7, 
@@ -111,7 +117,7 @@ Plot_M <- plot_relat_inside(DF_migrant,
                     legend = TRUE,
                     labels_x_axis = c("1yr before dispersal",
                                       "1yr after dispersal")) +
-  ggplot2::theme(plot.margin = ggplot2::margin(t = 3, r = 0, b = 3, l = 3, "pt"),
+  ggplot2::theme(plot.margin = ggplot2::margin(t = 4, r = 0, b = 4, l = 4, "pt"),
         axis.text.x = ggplot2::element_text(angle = 60, 
                                             hjust = 1, 
                                             size = 7, 
@@ -122,7 +128,7 @@ Plot_philo <- plot_relat_inside(DF_native,
                            legend = FALSE,
                            labels_x_axis = c("1yr before onset of\n reproductive activity",
                                              "1yr after onset of\n reproductive activity")) +
-  ggplot2::theme(plot.margin = ggplot2::margin(t = 3, r = -1, b = 3, l = -1, "pt"),
+  ggplot2::theme(plot.margin = ggplot2::margin(t = 4, r = 0, b = 4, l = 0, "pt"),
         axis.text.x = ggplot2::element_text(angle = 60, 
                                             hjust = 1, 
                                             size = 7, 
@@ -158,13 +164,13 @@ plot_intra_inter <- function(DF) {
     ggplot2::geom_hline(yintercept = c(0.25,  0.75), linetype = 3, size = 0.2) +
     ggplot2::geom_hline(yintercept = 0.5, linetype = 3, size = 0.5, col = "black") +
     ggplot2::geom_errorbar(ggplot2::aes(ymin = inf, ymax = sup), width= 0) +
-    ggplot2::geom_text(data = DF, ggplot2::aes(x = 2.5, y = 1.10), 
+    ggplot2::geom_text(data = DF, ggplot2::aes(x = 2.5, y = 1.08), 
               label = paste(DF$plotname[1]), 
               size = 0.35*7, 
               col = "black", 
               inherit.aes = F, 
               check_overlap = TRUE) +
-    ggplot2::geom_hline(yintercept = 1.05) +
+    ggplot2::geom_hline(yintercept = 1.03,  size = 0.25) +
     ggplot2::scale_color_manual(" ",
                        values = PPA) +
     ggplot2::scale_shape_manual(" ",
@@ -201,14 +207,14 @@ plot_sex <- function(DF) {
     ggplot2::geom_hline(yintercept = c(0.25,  0.75), linetype = 3, size = 0.2) +
     ggplot2::geom_hline(yintercept = 0.5, linetype = 3, size = 0.5, col = "black") +
     ggplot2::geom_errorbar(ggplot2::aes(ymin = inf, ymax = sup), width= 0) +
-    ggplot2::geom_text(data = DF, ggplot2::aes(x = 2, y = 1.10), 
+    ggplot2::geom_text(data = DF, ggplot2::aes(x = 2, y = 1.08), 
               label = paste(DF$plotname[1]), 
               size = 0.35*7, 
               col = "black", 
               inherit.aes = FALSE, 
               check_overlap = TRUE) +
     # geom_bar(data = NULL, aes(x =4, y=10), inherit.aes = T) +
-    ggplot2::geom_hline(yintercept = 1.05) +
+    ggplot2::geom_hline(yintercept = 1.03, size = 0.25) +
     ggplot2::scale_color_manual(" ",
                        values = PPA_intra) +
     ggplot2::scale_shape_manual(" ",
@@ -342,12 +348,15 @@ social_plot <- plot_intra_inter(soss) +
                                             family = "", 
                                             face = "plain"),
         plot.background = ggplot2::element_blank(),
-        axis.ticks.length = ggplot2::unit(1, "mm"),
         axis.title.x = ggplot2::element_blank(),
         axis.title.y = ggplot2::element_text(margin = ggplot2::margin(r = -1)), 
         text = ggplot2::element_text(size = 7, 
                                      family = "",
-                                     face = "plain"))
+                                     face = "plain"), 
+        axis.ticks.length = ggplot2::unit(0.5, "mm"),
+        axis.ticks = ggplot2::element_line(size = rel(0.4)),
+        panel.border = ggplot2::element_rect(size = 0.4),
+        panel.background = element_blank())
 
 body_mass_plot <- plot_intra_inter(soss2) +
   ggplot2::theme(
@@ -359,11 +368,14 @@ body_mass_plot <- plot_intra_inter(soss2) +
         plot.background = ggplot2::element_blank(),
         axis.title = ggplot2::element_blank(),
         axis.text.y = ggplot2::element_blank(),
-        axis.ticks.length = ggplot2::unit(1, "mm"),
         axis.ticks.y = ggplot2::element_blank(), 
         text = ggplot2::element_text(size = 7, 
                                      family = "",
-                                     face = "plain"))
+                                     face = "plain"), 
+        axis.ticks.length = ggplot2::unit(0.5, "mm"),
+        axis.ticks = ggplot2::element_line(size = rel(0.4)),
+        panel.border = ggplot2::element_rect(size = 0.4), 
+        panel.background = element_blank())
 
 sex_plot <- plot_sex(soss3) +
   ggplot2::theme(
@@ -375,11 +387,14 @@ sex_plot <- plot_sex(soss3) +
         plot.background = ggplot2::element_blank(),
         axis.title = ggplot2::element_blank(),
         axis.text.y = ggplot2::element_blank(),
-        axis.ticks.length = ggplot2::unit(1, "mm"),
         axis.ticks.y = ggplot2::element_blank(), 
         text = ggplot2::element_text(size = 7, 
                                      family = "",
-                                     face = "plain"))
+                                     face = "plain"), 
+        axis.ticks.length = ggplot2::unit(0.5, "mm"),
+        axis.ticks = ggplot2::element_line(size = rel(0.4)),
+        panel.border = ggplot2::element_rect(size = 0.4), 
+        panel.background = element_blank())
 
 ttt <- egg::ggarrange(social_plot, body_mass_plot, sex_plot, ncol = 3, widths = c(4,4,3))
 
@@ -390,3 +405,4 @@ ttt <- egg::ggarrange(social_plot, body_mass_plot, sex_plot, ncol = 3, widths = 
 return(ttt)
 }
 }
+
