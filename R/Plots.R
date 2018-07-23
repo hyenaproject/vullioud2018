@@ -30,7 +30,7 @@ tt2 <- ggplot2::ggplot(DF, ggplot2::aes(time, y = relat,fill = time, col = time)
                                                 ymin = stats::median(x),
                                                 ymax = stats::median(x)))}) +
   ggplot2::scale_y_continuous("Cumulative relatedness",
-                     limits = c(0, 6.6)) +
+                     limits = c(0, 6.65)) +
   ggplot2::scale_x_discrete("",
                    labels = labels_x_axis) +
   ggplot2::scale_color_manual(values = col1) +
@@ -42,7 +42,7 @@ tt2 <- ggplot2::ggplot(DF, ggplot2::aes(time, y = relat,fill = time, col = time)
             check_overlap = T,
             family = "",
             fontface = "plain") +
-  ggplot2::geom_hline(yintercept = 6.25, size = 0.25)
+  ggplot2::geom_hline(yintercept = 6.25, size = 0.195)
 
 if(legend == FALSE) {
   tt2 <- tt2 +
@@ -56,7 +56,7 @@ if(legend == FALSE) {
           axis.title.y = ggplot2::element_blank(),
           axis.text.y = ggplot2::element_blank(),
           axis.ticks.y = ggplot2::element_blank(), 
-          axis.ticks.length = ggplot2::unit(0.5, "mm"),
+          axis.ticks.length = ggplot2::unit(0.75, "mm"),
           axis.ticks = ggplot2::element_line(size = rel(0.4)),
           panel.border = ggplot2::element_rect(size = 0.4), 
           panel.background = element_blank())
@@ -69,7 +69,7 @@ if(legend == FALSE) {
                                                 face = "plain"),
           axis.title.x = ggplot2::element_blank(),
           plot.background = ggplot2::element_blank(), 
-          axis.ticks.length = ggplot2::unit(0.5, "mm"),
+          axis.ticks.length = ggplot2::unit(0.75, "mm"),
           axis.ticks = ggplot2::element_line(size = rel(0.4)),
           panel.border = ggplot2::element_rect(size = 0.4), 
           panel.background = element_blank())
@@ -169,8 +169,9 @@ plot_intra_inter <- function(DF) {
               size = 0.35*7, 
               col = "black", 
               inherit.aes = F, 
-              check_overlap = TRUE) +
-    ggplot2::geom_hline(yintercept = 1.03,  size = 0.25) +
+              check_overlap = TRUE, 
+              hjust = "middle") +
+    ggplot2::geom_hline(yintercept = 1.0275,  size = 0.195) +
     ggplot2::scale_color_manual(" ",
                        values = PPA) +
     ggplot2::scale_shape_manual(" ",
@@ -179,7 +180,7 @@ plot_intra_inter <- function(DF) {
                        breaks = c(1, 2, 3, 4),
                        labels =  c("Interclan",  "Intra-Mixed", "Intra-Native", "Intra-Immigrant")) +
     ggplot2::scale_y_continuous("Winning probability (%)",
-                       limits = c(0,1.10),
+                       limits = c(0,1.08),
                        breaks = c(0, 0.25, 0.5, 0.75, 1),
                        labels = c("0", "25", "50", "75", "100")) +
     ggthemes::theme_base()  +
@@ -212,9 +213,10 @@ plot_sex <- function(DF) {
               size = 0.35*7, 
               col = "black", 
               inherit.aes = FALSE, 
-              check_overlap = TRUE) +
+              check_overlap = TRUE, 
+              hjust = "middle") +
     # geom_bar(data = NULL, aes(x =4, y=10), inherit.aes = T) +
-    ggplot2::geom_hline(yintercept = 1.03, size = 0.25) +
+    ggplot2::geom_hline(yintercept = 1.0275, size = 0.19) +
     ggplot2::scale_color_manual(" ",
                        values = PPA_intra) +
     ggplot2::scale_shape_manual(" ",
@@ -223,7 +225,7 @@ plot_sex <- function(DF) {
                        breaks = c(1, 2, 3),
                        labels =  c("Interclan",  "Intra-Mixed", "Intra-Native")) +
     ggplot2::scale_y_continuous("Winning probability (%)",
-                       limits = c(0,1.10),
+                       limits = c(0,1.08),
                        breaks = c(0, 0.25, 0.5, 0.75, 1),
                        labels = c("0", "25", "50", "75", "100")) +
     ggthemes::theme_base()  +
@@ -353,7 +355,7 @@ social_plot <- plot_intra_inter(soss) +
         text = ggplot2::element_text(size = 7, 
                                      family = "",
                                      face = "plain"), 
-        axis.ticks.length = ggplot2::unit(0.5, "mm"),
+        axis.ticks.length = ggplot2::unit(0.75, "mm"),
         axis.ticks = ggplot2::element_line(size = rel(0.4)),
         panel.border = ggplot2::element_rect(size = 0.4),
         panel.background = element_blank())
@@ -372,7 +374,7 @@ body_mass_plot <- plot_intra_inter(soss2) +
         text = ggplot2::element_text(size = 7, 
                                      family = "",
                                      face = "plain"), 
-        axis.ticks.length = ggplot2::unit(0.5, "mm"),
+        axis.ticks.length = ggplot2::unit(0.75, "mm"),
         axis.ticks = ggplot2::element_line(size = rel(0.4)),
         panel.border = ggplot2::element_rect(size = 0.4), 
         panel.background = element_blank())
@@ -391,7 +393,7 @@ sex_plot <- plot_sex(soss3) +
         text = ggplot2::element_text(size = 7, 
                                      family = "",
                                      face = "plain"), 
-        axis.ticks.length = ggplot2::unit(0.5, "mm"),
+        axis.ticks.length = ggplot2::unit(0.75, "mm"),
         axis.ticks = ggplot2::element_line(size = rel(0.4)),
         panel.border = ggplot2::element_rect(size = 0.4), 
         panel.background = element_blank())
