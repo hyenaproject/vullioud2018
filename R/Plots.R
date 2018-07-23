@@ -107,7 +107,7 @@ Plot_F <- plot_relat_inside(DF_female,
                     legend = FALSE,
                     labels_x_axis = c("2.5 yrs of age", "4.5 yrs of age")) +
   ggplot2::theme(plot.margin = ggplot2::margin(t = 4, r = 4, b = 4, l = 0, "pt"),
-        axis.text.x = ggplot2::element_text(angle = 60,
+        axis.text.x = ggplot2::element_text(angle = 55,
                                             hjust = 1, 
                                             size = 7, 
                                             family = "",
@@ -118,7 +118,7 @@ Plot_M <- plot_relat_inside(DF_migrant,
                     labels_x_axis = c("1yr before dispersal",
                                       "1yr after dispersal")) +
   ggplot2::theme(plot.margin = ggplot2::margin(t = 4, r = 0, b = 4, l = 4, "pt"),
-        axis.text.x = ggplot2::element_text(angle = 60, 
+        axis.text.x = ggplot2::element_text(angle = 55, 
                                             hjust = 1, 
                                             size = 7, 
                                             family = "",
@@ -129,7 +129,7 @@ Plot_philo <- plot_relat_inside(DF_native,
                            labels_x_axis = c("1yr before onset of\n reproductive activity",
                                              "1yr after onset of\n reproductive activity")) +
   ggplot2::theme(plot.margin = ggplot2::margin(t = 4, r = 0, b = 4, l = 0, "pt"),
-        axis.text.x = ggplot2::element_text(angle = 60, 
+        axis.text.x = ggplot2::element_text(angle = 55, 
                                             hjust = 1, 
                                             size = 7, 
                                             family = "",
@@ -137,7 +137,7 @@ Plot_philo <- plot_relat_inside(DF_native,
 
 x2 <- egg::ggarrange(Plot_M, Plot_philo,Plot_F, ncol = 3)
 if(PDF == TRUE) {
-  ggplot2::ggsave(x2, filename = "plot2.pdf", width = 88, height = 68, units= "mm")
+  ggplot2::ggsave(x2, filename = "plot2.pdf", width = 88, height = 78, units= "mm")
 } else {
 return(x2)
 }
@@ -188,7 +188,7 @@ plot_intra_inter <- function(DF) {
 }
 
 ################################################################################
-#' Plot2 sex panel (used internally)
+#' Plot1 sex panel (used internally)
 #'
 #' Plots the predictions for sex model. These
 #' predictions are computed and formated inside the plot2 function
@@ -345,7 +345,7 @@ soss$pos2[soss$type == "mig"] <- 4
 social_plot <- plot_intra_inter(soss) +
   ggplot2::theme(
         plot.margin = ggplot2::margin(t = 3, r = 0, b = 3, l = 3, "pt"),
-        axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, color = PPA_legend, 
+        axis.text.x = ggplot2::element_text(angle = 55, hjust = 1, color = PPA_legend, 
                                             size = 7, 
                                             family = "", 
                                             face = "plain"),
@@ -363,7 +363,7 @@ social_plot <- plot_intra_inter(soss) +
 body_mass_plot <- plot_intra_inter(soss2) +
   ggplot2::theme(
         plot.margin = ggplot2::margin(t = 3, r = 1, b = 3, l = 1, "pt"),
-        axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, color = PPA_legend, 
+        axis.text.x = ggplot2::element_text(angle = 55, hjust = 1, color = PPA_legend, 
                                             size = 7, 
                                             family = "", 
                                             face = "plain"),
@@ -382,7 +382,7 @@ body_mass_plot <- plot_intra_inter(soss2) +
 sex_plot <- plot_sex(soss3) +
   ggplot2::theme(
         plot.margin = ggplot2::margin(t = 3, r = 3, b = 3, l = 0, "pt"),
-        axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, color = PPA_legend, 
+        axis.text.x = ggplot2::element_text(angle = 55, hjust = 1, color = PPA_legend, 
                                             size = 7, 
                                             family = "", 
                                             face = "plain"),
