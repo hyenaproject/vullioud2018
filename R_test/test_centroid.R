@@ -1,3 +1,6 @@
+
+
+
 # simulate the data
 x <- rnorm(100, mean = 50, sd = 15) + 50
 y <- rnorm(100, mean = 50, sd = 15)
