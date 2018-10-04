@@ -1,27 +1,50 @@
 # Vullioud_2018
 
-This is the GitHub repository that hosts the R package Vullioud_2018.
-After being uploaded here, the package will not evolve much because it aims at documenting how we obtained the
-results for the paper entitled "Social support drives female dominance in the spotted hyaena" by Colin Vullioud,
-Eve Davidian, Bettina Wachter, François Rousset, Alexandre Courtiol & Oliver P. Höner (in review).
-The only planned updates are updates to maintain compatibility with other packages, so that our code won't break.
+This is the GitHub repository that hosts the R package ```vullioud2018```.
 
-This package has not been conceived for general use. It serves to document the
-steps of our analysis.
+
+## What is this R package about?
+
+This package aims at documenting how we obtained the
+results for the paper entitled "Social support drives female dominance in the spotted hyaena" by Colin Vullioud,
+Eve Davidian, Bettina Wachter, François Rousset, Alexandre Courtiol & Oliver P. Höner (accepted).
+
+The only planned updates are updates that will be necessary to maintain the compatibility with other packages, so that our code won't break.
 
 
 ## How to explore the sources of the package?
 
-To see our source code, you can either browse the files above within GitHub or 
-download the *.tar.gz file containing all sources bundled with some data to 
-try out our functions in R.
+To see our source code, you simply browse the files above within GitHub.
 
 
-## Installation
+## How to install the package?
 
-More to come...
+First make sure that the R package ```drat``` is installed on your system.
+If that is not the case, install the R package by simply typing (inside your R Console):
+
+```{r}
+install.packages("drat")
+```
+
+Once the R package ```drat``` is installed, you can simply install our packages by typing (inside your R Console):
+
+```{r}
+drat::addRepo("hyenaproject")
+install.packages("vullioud2018")
+```
 
 
-## Usage
+## How to use the package?
 
-More to come...
+Once the package is installed, you can simply use it by typing (inside your R Console):
+
+```{r}
+library("vullioud2018")
+```
+
+To get the instructions on how to continue after that type (inside your R Console):
+```{r}
+?vullioud2018
+```
+
+If you have any problem, feel free to contact us: hyenaproject@gmail.com
