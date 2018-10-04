@@ -1,8 +1,8 @@
 # Vullioud_2018
 
-This is the GitHub repository that will soon host the R package Vullioud_2018.
+This is the GitHub repository that hosts the R package Vullioud_2018.
 After being uploaded here, the package will not evolve much because it aims at documenting how we obtained the
-results for the paper entitled "Social support drives female dominance in the spotted hyena" by Colin Vullioud,
+results for the paper entitled "Social support drives female dominance in the spotted hyaena" by Colin Vullioud,
 Eve Davidian, Bettina Wachter, François Rousset, Alexandre Courtiol & Oliver P. Höner (in review).
 The only planned updates are updates to maintain compatibility with other packages, so that our code won't break.
 
