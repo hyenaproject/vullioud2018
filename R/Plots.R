@@ -19,7 +19,7 @@ plot_relat_inside <- function(DF,
                       labels_x_axis) {
 time <- relat <- NULL
 
-  col1 <- c("#009E73",  "#9ad0f3", "#F0E442", "#D55E00")
+  col1 <-  c("#E69F00",  "#009E73", "#56B4E9", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 tt2 <- ggplot2::ggplot(DF, ggplot2::aes(time, y = relat,fill = time, col = time), alpha = 0.02) +
   ggplot2::geom_boxplot(width = 0.4, outlier.shape = NA) +
   ggplot2::stat_summary(geom = "crossbar",
@@ -57,7 +57,7 @@ if(legend == FALSE) {
           axis.text.y = ggplot2::element_blank(),
           axis.ticks.y = ggplot2::element_blank(), 
           axis.ticks.length = ggplot2::unit(0.75, "mm"),
-          axis.ticks = ggplot2::element_line(size = rel(0.4)),
+          axis.ticks = ggplot2::element_line(size = ggplot2::rel(0.4)),
           panel.border = ggplot2::element_rect(size = 0.4), 
           panel.background = element_blank())
 } else {
@@ -70,7 +70,7 @@ if(legend == FALSE) {
           axis.title.x = ggplot2::element_blank(),
           plot.background = ggplot2::element_blank(), 
           axis.ticks.length = ggplot2::unit(0.75, "mm"),
-          axis.ticks = ggplot2::element_line(size = rel(0.4)),
+          axis.ticks = ggplot2::element_line(size = ggplot2::rel(0.4)),
           panel.border = ggplot2::element_rect(size = 0.4), 
           panel.background = element_blank())
 }
@@ -157,7 +157,7 @@ return(x2)
 #'@export
 plot_intra_inter <- function(DF) {
   pred <- pos2 <- type <- Model <- inf <- sup <- NULL
-  PPA <- c("#009E73",  "#FB9A99","#9ad0f3", "#D55E00")
+  PPA <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
   ggplot2::ggplot(DF, ggplot2::aes(y = pred, x = pos2, col = type, shape = Model)) +
     ggplot2::geom_point() +
@@ -201,7 +201,7 @@ plot_intra_inter <- function(DF) {
 
 plot_sex <- function(DF) {
   inf <- sup <- Model <- pred <- pos <- type <- NULL
-  PPA_intra <- c("#009E73",  "#9ad0f3", "#D55E00")
+  PPA_intra <- c("#000000", "#56B4E9", "#009E73", "#E69F00")
 
   ggplot2::ggplot(DF, ggplot2::aes(y = pred, x = pos, col = type, shape = Model)) +
     ggplot2::geom_point() +
@@ -270,8 +270,8 @@ plot1 <- function(Mod_so_diff,
 
   type <- pred <- inf <- sup <- pos <- Model <- pos2 <- NULL
 
-  PPA <- c("#009E73",  "#FB9A99","#9ad0f3", "#D55E00")
-  PPA_legend <-  c("#009E73",  "#9ad0f3", "#D55E00",  "#FB9A99")
+  PPA <-c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+  PPA_legend <-  c("#000000", "#56B4E9", "#009E73", "#E69F00")
 
 
   ############### First tweak the data // get the predictions
