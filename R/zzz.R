@@ -9,7 +9,7 @@
     "\n ",
     "\n Social support drives female dominance in the spotted hyena",
     "\n ",
-    "\n by Vullioud, Davidian, Wachter, Rousset, Courtiol and Höner,",
+    "\n by Vullioud, Davidian, Wachter, Rousset, Courtiol and H\u00F6ner,",
     "\n published in Nature Ecology Evolution (2018).",
     "\n ",
     "\n Type ?vullioud2018 for information about how to use this package!",
