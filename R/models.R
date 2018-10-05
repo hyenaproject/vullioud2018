@@ -115,7 +115,7 @@ buildcorrsigned <- function(id1, id2, type) {
 #'                              DF1 = diff_sex_social)
 #'                              }
 fit_social <- function(fit_method, model, DF1){
-  require(spaMM, quietly = T)
+  requireNamespace("spaMM", quietly = TRUE)
   corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
   DF1$pairsID <- corr.obj$pairsID
 
@@ -219,14 +219,14 @@ spaMM::fitme(win_social ~ type + corrMatrix(1|pairsID),
 #' }
 
 fit_body_mass <- function(fit_method, model, DF1) {
-  require(spaMM, quietly = T)
-corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
+  requireNamespace("spaMM", quietly = TRUE)
+  corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
 DF1$pairsID <- corr.obj$pairsID
 
 data_mod <- DF1
 data_mod$win_heavy <- data_mod$win
 
-if(model == "full"){
+if (model == "full") {
 
 spaMM::fitme(win_heavy ~ type * (sex + social_sup_bin) + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
@@ -304,8 +304,8 @@ print("error, not a valid model argument")
 #' }
 #'
 fit_sex <- function(model, fit_method, DF1){
-  require(spaMM, quietly = T)
-corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
+  requireNamespace("spaMM", quietly = TRUE)
+  corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
 DF1$pairsID <- corr.obj$pairsID
 
 
@@ -368,8 +368,8 @@ spaMM::fitme(win_female ~ type + corrMatrix(1|pairsID),
 #'}
 
 fit_resid <- function(fit_method, DF1){
-  require(spaMM, quietly = T)
-corr.obj2 <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
+  requireNamespace("spaMM", quietly = TRUE)
+  corr.obj2 <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
 DF1$pairsID <- corr.obj2$pairsID
 
 fitme(win ~ 1 + corrMatrix(1|pairsID),
