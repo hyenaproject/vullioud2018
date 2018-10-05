@@ -256,68 +256,42 @@ plot1 <- function(Mod_so_diff,
 
 
   ############### First tweak the data // get the predictions
-sex <- get_predictions(Mod_sex) %>%
-  dplyr::group_by(type) %>%
-  dplyr::summarise(pred = pred[10],
-                   inf = inf[10],
-                   sup = sup[10]) %>%
-  dplyr::mutate(Model = "SEX")
-
-soss3 <- sex %>%
-  dplyr::mutate(pos = 1:3) %>%
-  dplyr::arrange(pos)
-soss3$plotname <- "Sex"
-soss3$names <-  c("Intra-Native", "Intra-Mixed", "Interclan")
+  soss3 <-  get_and_clean_prediction(Mod_sex) %>%
+  dplyr::mutate(Model = "SEX", 
+                pos = 1:3, 
+                plotname = "Sex") %>%
+  dplyr::arrange(pos) %>%
+  dplyr::mutate(names =  c("Intra-Native", "Intra-Mixed", "Interclan"))
 
 ################ weight
-weight_intra <- get_predictions(Mod_mass_same) %>%
-  dplyr::group_by(type) %>%
-  dplyr::summarise(pred = pred[10],
-                   inf = inf[10],
-                   sup = sup[10]) %>%
+weight_intra <- get_and_clean_prediction(Mod_mass_same) %>%
   dplyr::mutate(Model = "WEIGHT_intra")
 
-weight <-get_predictions(Mod_mass_diff) %>%
-  dplyr::group_by(type) %>%
-  dplyr::summarise(pred = pred[10],
-                   inf = inf[10],
-                   sup = sup[10]) %>%
+weight <-get_and_clean_prediction(Mod_mass_diff) %>%
   dplyr::mutate(Model = "WEIGHT")
 
-soss2 <- dplyr::bind_rows(weight, weight_intra)
-soss2 <- soss2 %>%
-  dplyr::mutate(pos = ifelse(type == "inter", 1, ifelse(type == "mix", 2, ifelse(type == "nat", 3, 4))))
-soss2 <- soss2 %>%
-  dplyr::mutate(pos2 = ifelse(Model == "WEIGHT", pos - 0.1, pos + 0.1))
-soss2$plotname <- "Body mass"
-soss2 <- soss2 %>%
-  dplyr::arrange(pos2)
+soss2 <- dplyr::bind_rows(weight, weight_intra) %>%
+  dplyr::mutate(pos = ifelse(type == "inter", 1, ifelse(type == "mix", 2, ifelse(type == "nat", 3, 4))), 
+                pos2 = ifelse(Model == "WEIGHT", pos - 0.1, pos + 0.1), 
+                plotname = "Body mass") %>%
+  dplyr::arrange(pos2) 
+
 soss2$pos2[soss2$type == "mig"] <- 4
 
 ############# social support
 
-sos_intra <- get_predictions(Mod_so_same) %>%
-  dplyr::group_by(type) %>%
-  dplyr::summarise(pred = pred[10],
-                   inf = inf[10],
-                   sup = sup[10]) %>%
+sos_intra <- get_and_clean_prediction(Mod_so_same) %>%
   dplyr::mutate(Model = "SO_intra")
 
-sos <- get_predictions(Mod_so_diff) %>%
-  dplyr::group_by(type) %>%
-  dplyr::summarise(pred = pred[10],
-                   inf = inf[10],
-                   sup = sup[10]) %>%
+sos <- get_and_clean_prediction(Mod_so_diff) %>%
   dplyr::mutate(Model = "SO")
 
-soss <- dplyr::bind_rows(sos, sos_intra)
-soss <- soss %>%
-  dplyr::mutate(pos = ifelse(type == "inter", 1, ifelse(type == "mix", 2, ifelse(type == "nat", 3, 4))))
-soss <- soss %>%
-  dplyr::mutate(pos2 = ifelse(Model == "SO", pos - 0.1, pos + 0.1))
-soss$plotname <- "Social support"
-soss <- soss %>%
+soss <- dplyr::bind_rows(sos, sos_intra) %>%
+  dplyr::mutate(pos = ifelse(type == "inter", 1, ifelse(type == "mix", 2, ifelse(type == "nat", 3, 4))), 
+                pos2 = ifelse(Model == "SO", pos - 0.1, pos + 0.1), 
+                plotname = "Social support") %>%
   dplyr::arrange(pos2)
+
 soss$pos2[soss$type == "mig"] <- 4
 
 
@@ -387,5 +361,21 @@ ttt <- egg::ggarrange(social_plot, body_mass_plot, sex_plot, ncol = 3, widths = 
 ttt <- egg::ggarrange(social_plot, body_mass_plot, sex_plot, ncol = 3, widths = c(4,4,3))
 return(ttt)
 }
+}
+
+################################################################################
+#' get_and_clean_prediction
+#'
+#' get the prediction and frame them for the plot1 
+#'
+#'@name get_and_clean_prediction
+#'@param mod social model different sex
+get_and_clean_prediction <- function(mod){
+  
+  get_predictions(mod) %>%
+dplyr::group_by(type) %>%
+  dplyr::summarise(pred = pred[10],
+                   inf = inf[10],
+                   sup = sup[10])
 }
 
