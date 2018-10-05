@@ -1,6 +1,6 @@
 Package: vullioud2018
 Type: Package
-Title: Analysis Of Dominance In Spotted Hyena
+Title: Analysis of Dominance in Spotted Hyena
 Version: 0.1.0
 Authors@R: c(
           person("Colin", "Vullioud", email = "colino.vullioud@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-9218-1571")),
