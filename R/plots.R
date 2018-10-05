@@ -361,7 +361,7 @@ return(ttt)
 #'@name get_and_clean_prediction
 #'@param mod social model different sex
 get_and_clean_prediction <- function(mod){
-  
+  type <- pred <- inf <- sup <- NULL
   get_predictions(mod) %>%
 dplyr::group_by(type) %>%
   dplyr::summarise(pred = pred[10],
