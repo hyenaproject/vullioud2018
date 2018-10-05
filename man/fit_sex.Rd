@@ -2,7 +2,7 @@
 % Please edit documentation in R/models.R
 \name{fit_sex}
 \alias{fit_sex}
-\title{fit the models when the female is focal}
+\title{Fit the models when the female is focal}
 \usage{
 fit_sex(model, fit_method, DF1)
 }
@@ -17,34 +17,37 @@ fit_sex(model, fit_method, DF1)
 a list (fitted model with spaMM)
 }
 \description{
-this function fits the models when the female is focal
+this function fits the models when the female is focal.
 }
 \examples{
 \dontrun{
 mod_sex_full_diff_PQL <- fit_sex(fit_method = "PQL",
-                             model = "full",
-                             DF1 = diff_sex_sex)
+                                model = "full",
+                                DF1 = diff_sex_sex)
 mod_sex_full_diff_PQLL <- fit_sex(fit_method = "PQL/L",
-                             model = "full",
-                             DF1 = diff_sex_sex)
+                                 model = "full",
+                                 DF1 = diff_sex_sex)
+                             
 mod_sex_nosocial_diff_PQL <-fit_sex(fit_method = "PQL",
-                             model = "nosocial",
-                             DF1 = diff_sex_sex)
+                                   model = "nosocial",
+                                   DF1 = diff_sex_sex)
 mod_sex_nosocial_diff_PQLL <- fit_sex(fit_method = "PQL/L",
-                             model = "nosocial",
-                             DF1 = diff_sex_sex)
+                                     model = "nosocial",
+                                     DF1 = diff_sex_sex)
+                             
 mod_sex_nomass_diff_PQL <- fit_sex(fit_method = "PQL",
-                             model = "nomass",
-                             DF1 = diff_sex_sex)
+                                  model = "nomass",
+                                  DF1 = diff_sex_sex)
 mod_sex_nomass_diff_PQLL <- fit_sex(fit_method = "PQL/L",
-                             model = "nomass",
-                             DF1 = diff_sex_sex)
+                                   model = "nomass",
+                                   DF1 = diff_sex_sex)
+                             
 mod_sex_null_diff_PQL <- fit_sex(fit_method = "PQL",
-                             model = "null",
-                             DF1 = diff_sex_sex)
+                                model = "null",
+                                DF1 = diff_sex_sex)
 mod_sex_null_diff_PQLL <- fit_sex(fit_method = "PQL/L",
-                             model = "null",
-                             DF1 = diff_sex_sex)
+                                 model = "null",
+                                 DF1 = diff_sex_sex)
 }
 
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/models.R
 \name{fit_resid}
 \alias{fit_resid}
-\title{fit the residency model}
+\title{Fit the residency model}
 \usage{
 fit_resid(fit_method, DF1)
 }
@@ -16,7 +16,7 @@ a list (fitted model with spaMM)
 }
 \description{
 this function fits the models when the migrants have higher social support than
-the native in interclan context
+the native in interclan context.
 }
 \examples{
 \dontrun{

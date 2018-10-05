@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_datasets.R
 \name{prepare_different_sex}
 \alias{prepare_different_sex}
-\title{Prepare the data for the intersex interactions}
+\title{Prepare the data for the interactions between different sexes}
 \usage{
 prepare_different_sex(DF1)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_datasets.R
 \name{prepare_same_sex}
 \alias{prepare_same_sex}
-\title{Prepare the data for the intrasex interactions}
+\title{Prepare the data for the same sex interactions}
 \usage{
 prepare_same_sex(DF1)
 }

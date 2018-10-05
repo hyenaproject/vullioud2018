@@ -2,7 +2,7 @@
 % Please edit documentation in R/models.R
 \name{fit_social}
 \alias{fit_social}
-\title{fit social support models}
+\title{Fit social support models}
 \usage{
 fit_social(fit_method, model, DF1)
 }
@@ -22,52 +22,59 @@ Fits the models when the social support is focal.
 \examples{
 \dontrun{
 mod_social_full_same_PQL <- fit_social(fit_method = "PQL",
-                             model = "full",
-                             DF1 = same_sex_social)
+                                      model = "full",
+                                      DF1 = same_sex_social)
 mod_social_full_diff_PQL <- fit_social(fit_method = "PQL",
-                             model = "full",
-                             DF1 = diff_sex_social)
+                                      model = "full",
+                                      DF1 = diff_sex_social)
+                                      
 mod_social_full_same_PQLL <- fit_social(fit_method = "PQL/L",
-                             model = "full",
-                             DF1 = same_sex_social)
+                                       model = "full",
+                                       DF1 = same_sex_social)
 mod_social_full_diff_PQLL <- fit_social(fit_method = "PQL/L",
-                             model = "full",
-                             DF1 = diff_sex_social)
+                                       model = "full",
+                                       DF1 = diff_sex_social)
+                                       
 mod_social_nomass_same_PQL <- fit_social(fit_method = "PQL",
-                             model = "nomass",
-                             DF1 = same_sex_social)
+                                        model = "nomass",
+                                        DF1 = same_sex_social)
 mod_social_nomass_diff_PQL <- fit_social(fit_method = "PQL",
-                             model = "nomass",
-                             DF1 = diff_sex_social)
+                                        model = "nomass",
+                                        DF1 = diff_sex_social)
+                                        
 mod_social_nomass_same_PQLL <- fit_social(fit_method = "PQL/L",
-                             model = "nomass",
-                             DF1 = same_sex_social)
+                                         model = "nomass",
+                                         DF1 = same_sex_social)
 mod_social_nomass_diff_PQLL <- fit_social(fit_method = "PQL/L",
-                             model = "nomass",
-                             DF1 = diff_sex_social)
+                                         model = "nomass",
+                                         DF1 = diff_sex_social)
+                                         
 mod_social_nosex_same_PQL <- fit_social(fit_method = "PQL",
-                             model = "nosex",
-                             DF1 = same_sex_social)
+                                       model = "nosex",
+                                       DF1 = same_sex_social)
 mod_social_nosex_diff_PQL <- fit_social(fit_method = "PQL",
-                             model = "nosex",
-                             DF1 = diff_sex_social)
+                                       model = "nosex",
+                                       DF1 = diff_sex_social)
+                                       
 mod_social_nosex_same_PQLL <- fit_social(fit_method = "PQL/L",
-                             model = "nosex",
-                             DF1 = same_sex_social)
+                                        model = "nosex",
+                                        DF1 = same_sex_social)
 mod_social_nosex_diff_PQLL <- fit_social(fit_method = "PQL/L",
-                             model = "nosex",
-                             DF1 = diff_sex_social)
+                                        model = "nosex",
+                                        DF1 = diff_sex_social)
+                                        
 mod_social_null_same_PQL <- fit_social(fit_method = "PQL",
-                             model = "null",
-                             DF1 = same_sex_social)
+                                      model = "null",
+                                      DF1 = same_sex_social)
 mod_social_null_diff_PQL <- fit_social(fit_method = "PQL",
-                             model = "null",
-                             DF1 = diff_sex_social)
+                                      model = "null",
+                                      DF1 = diff_sex_social)
+                                      
 mod_social_null_same_PQLL <- fit_social(fit_method = "PQL/L",
-                             model = "null",
-                             DF1 = same_sex_social)
+                                       model = "null",
+                                       DF1 = same_sex_social)
 mod_social_null_diff_PQLL <- fit_social(fit_method = "PQL/L",
-                             model = "null",
-                             DF1 = diff_sex_social)
+                                       model = "null",
+                                       DF1 = diff_sex_social)
                              }
 }
