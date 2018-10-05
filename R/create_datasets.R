@@ -216,7 +216,7 @@ create_DF_sex <- function(DF1){
 }
 
 ###############################################################################
-#' flip body mass (used internally)
+#' Flip body mass (used internally)
 #'
 #'Reverse all interaction in which the focal has a lower body mass than its
 #'opponent
