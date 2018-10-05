@@ -50,7 +50,7 @@
 #'
 #'### As each set of models requires a different choice of focal individuals,
 #'### the datasets have to be reshaped. Moreover, as models are fitted
-#'### separately for intra-sex and inter-sex interactions, differents datasets
+#'### separately for intra-sex and inter-sex interactions, different datasets
 #'### must also be computed.
 #'
 #'### First, we subset the main dataset between intra and inter-sex interactions
@@ -58,7 +58,7 @@
 #'data_same_sex <- prepare_same_sex(d1)
 #'data_diff_sex <- prepare_different_sex(d1)
 #'
-#'### Aditionnaly we create a subset for the models in Supplementary Materials
+#'### Additionally, we create a subset for the models in Supplementary Materials
 #'### testing the interactions in which the focal individual is a migrant 
 #'### with higher social support in interclan interactions.
 #'
@@ -72,7 +72,7 @@
 #'diff_sex_social <- create_DF_social(data_diff_sex)
 #'resid_social <- create_DF_social(data_resid)
 #'
-#'### BODY MASS MODELS: higest body mass as focal
+#'### BODY MASS MODELS: highest body mass as focal
 #'
 #'diff_sex_weight <- create_DF_weight(data_diff_sex)
 #'same_sex_weight <- create_DF_weight(data_same_sex)
@@ -164,7 +164,7 @@
 #'x2 <- get_TJUR(mod_social_null_diff_PQL, name = "mod_social_null_diff_PQL")
 #'as.data.frame(x2)
 #'
-#'###  get_logLik() returns the loglikelyhood of the model:
+#'###  get_logLik() returns the log likelihood of the model:
 #'
 #'x3 <- get_logLik(mod_social_null_diff_PQL, name = "mod_social_null_diff_PQL")
 #'as.data.frame(x3)
