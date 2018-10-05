@@ -3,7 +3,7 @@
 \docType{data}
 \name{females_relat}
 \alias{females_relat}
-\title{PLOT: female relat}
+\title{PLOT: females relat}
 \usage{
 data(females_relat)
 }

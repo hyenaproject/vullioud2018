@@ -15,11 +15,12 @@ a DF with heaviest as focal
 \description{
 Create the data use for the model with body mass as focal.
 it reverses all interaction in which the focal has a lower body mass than its
-opponent
+opponent.
 }
 \examples{
 data(data_diff_sex)
 data(data_same_sex)
 diff_sex_weight <- create_DF_weight(data_diff_sex)
 same_sex_weight <- create_DF_weight(data_same_sex)
+
 }

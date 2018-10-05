@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_datasets.R
 \name{flip_DF_weight}
 \alias{flip_DF_weight}
-\title{flip body mass (used internally)}
+\title{Flip body mass (used internally)}
 \usage{
 flip_DF_weight(DF1)
 }

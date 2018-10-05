@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_datasets.R
 \name{prepare_different_sex}
 \alias{prepare_different_sex}
-\title{Prepare the data for the different sexes interactions}
+\title{Prepare the data for the intersex interactions}
 \usage{
 prepare_different_sex(DF1)
 }
@@ -16,7 +16,7 @@ a filtered data frames
 Keeps the interaction between members of different sexes,
 selects the variables of interest, renames the type of
 interaction and creates a binomial version fo the social support and
-delta weight variables
+delta weight variables.
 }
 \examples{
 data(d1)

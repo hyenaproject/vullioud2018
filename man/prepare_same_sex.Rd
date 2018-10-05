@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_datasets.R
 \name{prepare_same_sex}
 \alias{prepare_same_sex}
-\title{Prepare the data for the same sex interactions}
+\title{Prepare the data for the intrasex interactions}
 \usage{
 prepare_same_sex(DF1)
 }
@@ -16,7 +16,7 @@ a filtered data frames
 Keeps the interaction between members of the same sex,
 selects the variables of interest, renames the type of
 interaction and creates a binomial version fo the social support and
-delta weight variables
+delta weight variables.
 }
 \examples{
 data(d1)

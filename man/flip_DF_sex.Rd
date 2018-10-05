@@ -7,11 +7,11 @@
 flip_DF_sex(DF1)
 }
 \arguments{
-\item{DF1}{The processed data for different sex}
+\item{DF1}{The processed data for intersex interactions}
 }
 \value{
 a DF with females as focal
 }
 \description{
-Reverses all interactions in which the focal is a male
+Reverses all interactions in which the focal is a male.
 }

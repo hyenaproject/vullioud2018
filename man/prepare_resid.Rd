@@ -17,7 +17,7 @@ Keeps the interclan interactions in which the individuals whith the highest
 social support is a migrant and its opponent a native.
 It also selects the variables of interest, renames the type of
 interaction and creates a binomial version fo the social support and
-delta weight variables
+delta weight variables.
 }
 \examples{
 data(d1)

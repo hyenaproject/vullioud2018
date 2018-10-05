@@ -14,9 +14,10 @@ a DF with females as focal
 }
 \description{
 Creates the data use for the model with female as focal,
-it reverses all interactions in which the focal is a male
+it reverses all interactions in which the focal is a male.
 }
 \examples{
 data(data_diff_sex)
 diff_sex_sex <- create_DF_sex(data_diff_sex)
+
 }

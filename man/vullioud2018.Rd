@@ -108,11 +108,11 @@ mod_social_null_same_PQL <- fit_social(fit_method = "PQL",
 
 ### BODY MASS MODELS:
 
-mod_mass_null_same_PQL <- fit_social(fit_method = "PQL",
+mod_mass_null_same_PQL <- fit_body_mass(fit_method = "PQL",
                              model = "null",
                              DF1 = same_sex_weight)
 
-mod_mass_null_diff_PQL <- fit_social(fit_method = "PQL",
+mod_mass_null_diff_PQL <- fit_body_mass(fit_method = "PQL",
                              model = "null",
                              DF1 = diff_sex_weight)
 
