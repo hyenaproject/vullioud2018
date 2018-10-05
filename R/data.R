@@ -20,7 +20,6 @@ NULL
 #' @format A data frame with 3024 interactions and 10 variables
 NULL
 
-
 #' different sex data
 #'
 #' A dataset containing the interaction of all different sex interactions
