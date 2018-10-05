@@ -331,38 +331,38 @@ fit_sex <- function(model, fit_method, DF1){
   if (model == "full"){
     
   spaMM::fitme(win_female ~ type * (social_sup_bin + body_mass_bin) + corrMatrix(1|pairsID),
-        corrMatrix = corr.obj$corrM,
-        family = "binomial", data = data_mod,
-        method = paste(fit_method),
-        control.HLfit = list(LevenbergM = TRUE),
-        verbose = c(TRACE = 1L))
+               corrMatrix = corr.obj$corrM,
+               family = "binomial", data = data_mod,
+               method = paste(fit_method),
+               control.HLfit = list(LevenbergM = TRUE),
+               verbose = c(TRACE = 1L))
   
   } else if (model == "nosocial"){
   
   spaMM::fitme(win_female ~ type * body_mass_bin + corrMatrix(1|pairsID),
-        corrMatrix = corr.obj$corrM,
-        family = "binomial", data = data_mod,
-        method = paste(fit_method),
-        control.HLfit = list(LevenbergM = TRUE),
-        verbose = c(TRACE = 1L))
+               corrMatrix = corr.obj$corrM,
+               family = "binomial", data = data_mod,
+               method = paste(fit_method),
+               control.HLfit = list(LevenbergM = TRUE),
+               verbose = c(TRACE = 1L))
   
   } else if (model == "nomass") {
   
   spaMM::fitme(win_female ~ type * social_sup_bin + corrMatrix(1|pairsID),
-        corrMatrix = corr.obj$corrM,
-        family = "binomial", data = data_mod,
-        method = paste(fit_method),
-        control.HLfit = list(LevenbergM = TRUE),
-        verbose = c(TRACE = 1L))
+               corrMatrix = corr.obj$corrM,
+               family = "binomial", data = data_mod,
+               method = paste(fit_method),
+               control.HLfit = list(LevenbergM = TRUE),
+               verbose = c(TRACE = 1L))
   
   } else if (model == "null") {
     
   spaMM::fitme(win_female ~ type + corrMatrix(1|pairsID),
-        corrMatrix = corr.obj$corrM,
-        family = "binomial", data = data_mod,
-        method = paste(fit_method),
-        control.HLfit = list(LevenbergM = TRUE),
-        verbose = c(TRACE = 1L))
+               corrMatrix = corr.obj$corrM,
+               family = "binomial", data = data_mod,
+               method = paste(fit_method),
+               control.HLfit = list(LevenbergM = TRUE),
+               verbose = c(TRACE = 1L))
   
   } else {
     
