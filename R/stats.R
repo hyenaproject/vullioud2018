@@ -67,11 +67,11 @@ get_TJUR <- function(model, name) {
 
 
 ################################################################################
-#'loglikelyhood
+#'log likelihood
 #'
 #'Wrapper arround logLik.
 #'
-#'@note Returns a tibble, so be aware of the automatic rounding
+#'@note Returns a tibble, so be aware of the automatic rounding.
 #'
 #'@name  get_logLik
 #'@param model model to be used
