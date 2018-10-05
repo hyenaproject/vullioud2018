@@ -11,5 +11,5 @@ plot_intra_inter(DF)
 }
 \description{
 Plots the predictions for the mass and social models. These
-predictions are computed and formated inside the plot2 function.
+predictions are computed and formatted inside the plot2 function.
 }

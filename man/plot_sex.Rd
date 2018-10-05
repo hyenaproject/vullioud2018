@@ -11,5 +11,5 @@ plot_sex(DF)
 }
 \description{
 Plots the predictions for sex model. These
-predictions are computed and formated inside the plot2 function.
+predictions are computed and formatted inside the plot2 function.
 }
