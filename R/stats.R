@@ -2,7 +2,7 @@
 #'
 #'Gets the predictions of the models (no newdata needed). It uses the
 #'spaMM::predict method which compute, in addition to the fitted value
-#'the 95 wald CI.
+#'the 95 Wald CI.
 #'
 #'@name get_predictions
 #'@param model the model for which we want the predictions
@@ -26,8 +26,7 @@ get_predictions <- function(model) {
 #'
 #'Wrapper around the spaMM::AIC method.
 #'
-#'@note Returns a tibble so be aware of the auto-
-#'matic rounding.
+#'@note Returns a tibble so be aware of the automatic rounding.
 #'
 #'@name get_AIC
 #'@param model model to be used
@@ -69,7 +68,7 @@ get_TJUR <- function(model, name) {
 ################################################################################
 #'log likelihood
 #'
-#'Wrapper arround logLik.
+#'Wrapper around logLik.
 #'
 #'@note Returns a tibble, so be aware of the automatic rounding.
 #'
