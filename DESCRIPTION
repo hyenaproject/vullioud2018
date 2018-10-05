@@ -2,12 +2,14 @@ Package: vullioud2018
 Type: Package
 Title: Analysis Of Dominance In Spotted Hyena
 Version: 0.1.0
-Author: Colin Vullioud [aut], 
-        Eve Davidian [aut], 
-        Bettina Wachter [aut], 
-        François Rousset [aut], 
-        Alexandre Courtiol [aut], 
-        Oliver P. Höner [aut]
+Authors@R: c(
+          person("Colin", "Vullioud", email = "colino.vullioud@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-9218-1571")),
+          person("Eve", "Davidian", role = "aut"),
+          person("Bettina", "Wachter", role = "aut", comment = c(ORCID = "0000-0002-0414-2298")),
+          person("François", "Rousset", role = "aut", comment = c(ORCID = "0000-0003-4670-0371")),
+          person("Alexandre", "Courtiol", email = "alexandre.courtiol@gmail.com", role = "aut", comment = c(ORCID = "0000-0003-0637-2959")),
+          person("Oliver P.", "Höner", role = "aut", comment = c(ORCID = "0000-0002-0658-3417"))
+          )
 Description: This R package aims at documenting the workflow behind the results from the 
     paper entitled "Social support drives female dominance in the spotted hyena" 
     by Colin Vullioud, Eve Davidian, Bettina Wachter, François Rousset, 
@@ -16,7 +18,6 @@ Description: This R package aims at documenting the workflow behind the results 
     focal individuals (for more details see the method section of the article). 
     This package has not been conceived for general use. It serves to document 
     the steps of our analysis.
-Maintainer: Colin Vullioud <colino.vullioud@gmail.com>
 Depends: R (>= 2.10)
 License: GPL (>=2)
 Encoding: UTF-8
