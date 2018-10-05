@@ -2,7 +2,7 @@
 % Please edit documentation in R/stats.R
 \name{get_logLik}
 \alias{get_logLik}
-\title{loglikelyhood}
+\title{log likelihood}
 \usage{
 get_logLik(model, name)
 }
@@ -15,7 +15,7 @@ get_logLik(model, name)
 Wrapper arround logLik.
 }
 \note{
-Returns a tibble, so be aware of the automatic rounding
+Returns a tibble, so be aware of the automatic rounding.
 }
 \examples{
 data(mod_sex_null_diff_PQL)
