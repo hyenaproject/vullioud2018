@@ -52,13 +52,16 @@ buildcorrsigned <- function(id1, id2, type) {
 #'@export
 #'@examples
 #'\dontrun{
+#'data(same_sex_social)
+#'data(diff_sex_social)
+#'
 #'mod_social_full_same_PQL <- fit_social(fit_method = "PQL",
 #'                                       model = "full",
 #'                                       DF1 = same_sex_social)
 #'mod_social_full_diff_PQL <- fit_social(fit_method = "PQL",
 #'                                       model = "full",
 #'                                       DF1 = diff_sex_social)
-#'                                       
+#'
 #'mod_social_full_same_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                        model = "full",
 #'                                        DF1 = same_sex_social)
@@ -72,35 +75,35 @@ buildcorrsigned <- function(id1, id2, type) {
 #'mod_social_nomass_diff_PQL <- fit_social(fit_method = "PQL",
 #'                                         model = "nomass",
 #'                                         DF1 = diff_sex_social)
-#'                                         
+#'
 #'mod_social_nomass_same_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                          model = "nomass",
 #'                                          DF1 = same_sex_social)
 #'mod_social_nomass_diff_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                          model = "nomass",
 #'                                          DF1 = diff_sex_social)
-#'                                          
+#'
 #'mod_social_nosex_same_PQL <- fit_social(fit_method = "PQL",
 #'                                        model = "nosex",
 #'                                        DF1 = same_sex_social)
 #'mod_social_nosex_diff_PQL <- fit_social(fit_method = "PQL",
 #'                                        model = "nosex",
 #'                                        DF1 = diff_sex_social)
-#'                                        
+#'
 #'mod_social_nosex_same_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                         model = "nosex",
 #'                                         DF1 = same_sex_social)
 #'mod_social_nosex_diff_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                         model = "nosex",
 #'                                         DF1 = diff_sex_social)
-#'                                         
+#'
 #'mod_social_null_same_PQL <- fit_social(fit_method = "PQL",
 #'                                       model = "null",
 #'                                       DF1 = same_sex_social)
 #'mod_social_null_diff_PQL <- fit_social(fit_method = "PQL",
 #'                                       model = "null",
 #'                                       DF1 = diff_sex_social)
-#'                                       
+#'
 #'mod_social_null_same_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                        model = "null",
 #'                                        DF1 = same_sex_social)
@@ -109,7 +112,6 @@ buildcorrsigned <- function(id1, id2, type) {
 #'                                        DF1 = diff_sex_social)
 #'                              }
 fit_social <- function(fit_method, model, DF1){
-  requireNamespace("spaMM", quietly = TRUE)
   corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
   DF1$pairsID <- corr.obj$pairsID
   data_mod <- DF1
@@ -171,55 +173,58 @@ fit_social <- function(fit_method, model, DF1){
 #'@export
 #'@examples
 #'\dontrun{
+#'data(same_sex_weight)
+#'data(diff_sex_weight)
+#'
 #'mod_mass_full_same_PQL <- fit_body_mass(fit_method = "PQL",
 #'                                        model = "full",
 #'                                        DF1 = same_sex_weight)
 #'mod_mass_full_diff_PQL <- fit_social(fit_method = "PQL",
 #'                                     model = "full",
 #'                                     DF1 = diff_sex_weight)
-#'                              
+#'
 #'mod_mass_full_same_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                      model = "full",
 #'                                      DF1 = same_sex_weight)
 #'mod_mass_full_diff_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                      model = "full",
 #'                                      DF1 = diff_sex_weight)
-#'                              
+#'
 #'mod_mass_nosocial_same_PQL <- fit_social(fit_method = "PQL",
 #'                                         model = "nosocial",
 #'                                         DF1 = same_sex_weight)
 #'mod_mass_nosocial_diff_PQL <- fit_social(fit_method = "PQL",
 #'                                         model = "nosocial",
 #'                                         DF1 = diff_sex_weight)
-#'                              
+#'
 #'mod_mass_nosocial_same_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                          model = "nosocial",
 #'                                          DF1 = same_sex_weight)
 #'mod_mass_nosocial_diff_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                          model = "nosocial",
 #'                                          DF1 = diff_sex_weight)
-#'                              
+#'
 #'mod_mass_nosex_same_PQL <- fit_social(fit_method = "PQL",
 #'                                      model = "nosex",
 #'                                      DF1 = same_sex_weight)
 #'mod_mass_nosex_diff_PQL <- fit_social(fit_method = "PQL",
 #'                                      model = "nosex",
 #'                                      DF1 = diff_sex_weight)
-#'                              
+#'
 #'mod_mass_nosex_same_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                       model = "nosex",
 #'                                       DF1 = same_sex_weight)
 #'mod_mass_nosex_diff_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                       model = "nosex",
 #'                                       DF1 = diff_sex_weight)
-#'                              
+#'
 #'mod_mass_null_same_PQL <- fit_social(fit_method = "PQL",
 #'                                     model = "null",
 #'                                     DF1 = same_sex_weight)
 #'mod_mass_null_diff_PQL <- fit_social(fit_method = "PQL",
 #'                                     model = "null",
 #'                                     DF1 = diff_sex_weight)
-#'                              
+#'
 #'mod_mass_null_same_PQLL <- fit_social(fit_method = "PQL/L",
 #'                                      model = "null",
 #'                                      DF1 = same_sex_weight)
@@ -229,7 +234,6 @@ fit_social <- function(fit_method, model, DF1){
 #' }
 
 fit_body_mass <- function(fit_method, model, DF1) {
-  requireNamespace("spaMM", quietly = TRUE)
   corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
   DF1$pairsID <- corr.obj$pairsID
   
@@ -292,27 +296,28 @@ fit_body_mass <- function(fit_method, model, DF1) {
 #'@export
 #'@examples
 #'\dontrun{
+#'data(diff_sex_sex)
 #'mod_sex_full_diff_PQL <- fit_sex(fit_method = "PQL",
 #'                                 model = "full",
 #'                                 DF1 = diff_sex_sex)
 #'mod_sex_full_diff_PQLL <- fit_sex(fit_method = "PQL/L",
 #'                                  model = "full",
 #'                                  DF1 = diff_sex_sex)
-#'                              
+#'
 #'mod_sex_nosocial_diff_PQL <-fit_sex(fit_method = "PQL",
 #'                                    model = "nosocial",
 #'                                    DF1 = diff_sex_sex)
 #'mod_sex_nosocial_diff_PQLL <- fit_sex(fit_method = "PQL/L",
 #'                                      model = "nosocial",
 #'                                      DF1 = diff_sex_sex)
-#'                              
+#'
 #'mod_sex_nomass_diff_PQL <- fit_sex(fit_method = "PQL",
 #'                                   model = "nomass",
 #'                                   DF1 = diff_sex_sex)
 #'mod_sex_nomass_diff_PQLL <- fit_sex(fit_method = "PQL/L",
 #'                                    model = "nomass",
 #'                                    DF1 = diff_sex_sex)
-#'                              
+#'
 #'mod_sex_null_diff_PQL <- fit_sex(fit_method = "PQL",
 #'                                 model = "null",
 #'                                 DF1 = diff_sex_sex)
@@ -322,7 +327,6 @@ fit_body_mass <- function(fit_method, model, DF1) {
 #' }
 #'
 fit_sex <- function(model, fit_method, DF1){
-  requireNamespace("spaMM", quietly = TRUE)
   corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
   DF1$pairsID <- corr.obj$pairsID
   data_mod <- DF1
@@ -384,11 +388,11 @@ fit_sex <- function(model, fit_method, DF1){
 #'@export
 #'@examples
 #'\dontrun{
+#'data(resid_social)
 #'resid_mod <- fit_resid(fit_method = "PQL", DF1 = resid_social)
 #'}
 
 fit_resid <- function(fit_method, DF1){
-  requireNamespace("spaMM", quietly = TRUE)
   corr.obj2 <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
   DF1$pairsID <- corr.obj2$pairsID
 
