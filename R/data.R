@@ -121,7 +121,7 @@ NULL
 ################################################################################
 ################################################################################
 
-#'PLOT: female relat
+#'PLOT: females relat
 #'
 #' A dataset containing the relatedness score for females at 3 different ages
 #' // used for plot1
@@ -129,7 +129,6 @@ NULL
 #' @keywords datasets
 #' @name females_relat
 #' @usage data(females_relat)
-#' @
 NULL
 
 ################################################################################
