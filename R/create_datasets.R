@@ -2,7 +2,7 @@
 #'
 #'Keeps the interaction between members of the same sex,
 #'selects the variables of interest, renames the type of
-#'interaction and creates a binomial version fo the social support and
+#'interaction and creates a binomial version of the social support and
 #'delta weight variables.
 #'
 #'@name prepare_same_sex
@@ -36,7 +36,7 @@ prepare_same_sex <- function(DF1) {
 #'
 #'Keeps the interaction between members of different sexes,
 #'selects the variables of interest, renames the type of
-#'interaction and creates a binomial version fo the social support and
+#'interaction and creates a binomial version of the social support and
 #'delta weight variables.
 #'
 #'@name prepare_different_sex
@@ -69,10 +69,10 @@ prepare_different_sex <- function(DF1) {
 ###############################################################################
 #' Prepare the data for the residency model (SI)
 #'
-#'Keeps the interclan interactions in which the individuals whith the highest
+#'Keeps the interclan interactions in which the individuals with the highest
 #'social support is a migrant and its opponent a native.
 #'It also selects the variables of interest, renames the type of
-#'interaction and creates a binomial version fo the social support and
+#'interaction and creates a binomial version of the social support and
 #'delta weight variables.
 #'
 #'@name prepare_resid
@@ -110,7 +110,7 @@ prepare_resid <- function(DF1) {
 #'
 #'@name flip_DF_social
 #'@param DF1 data frame
-#'@return a df with higest social support as focal
+#'@return a df with highest social support as focal
 #'@export
 #'
 flip_DF_social <- function(DF1) {
@@ -139,7 +139,7 @@ flip_DF_social <- function(DF1) {
 #'
 #'@name create_DF_social
 #'@param DF1 The processed data for same sex or different sex
-#'@return a DF with higest social support as focal
+#'@return a DF with highest social support as focal
 #'@export
 #'
 #'@examples
