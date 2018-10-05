@@ -14,13 +14,14 @@ This package has not been conceived for general use!
 
 In the examples below, we provide the workflow leading the main results
 presented in the paper.
-
-NOTE: The statistics (AIC, Tjurs D and logLik) of the models will looks
+}
+\note{
+The statistics (AIC, Tjurs'D and logLik) of the models will looks
 slightly different than in the article because the examples given
 in this script used models fitted with method = PQL similar as the models
 used for the predictions. However, the statistics presented in the manuscript
 used models fitted with method = PQL/L. The correct models can however be
-computed if wanted, by setting the option: fit_method = "PQL/L, in the
+computed if necessary, by setting the option: fit_method = "PQL/L, in the
 corresponding functions.
 }
 \examples{
@@ -30,8 +31,8 @@ corresponding functions.
 ###  Basic information about the data  ###
 ##########################################
 
-### The main data set contains > 4258 one-on-one interactions with clear domi
-### nance display. It contains all the variables needed to run the models and
+### The main data set contains > 4258 one-on-one interactions with clear dominance
+### display. It contains all the variables needed to run the models and
 ### the different analysis presented in the manuscript:
 ### - the IDs of both interacting parties (focal, other),
 ### - the Date and time of the interaction (DT),
