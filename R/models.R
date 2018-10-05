@@ -44,9 +44,9 @@ buildcorrsigned <- function(id1, id2, type) {
 #'Fits the models when the social support is focal.
 #'
 #'@name  fit_social
-#'@param fit_method, "PQL" or" PQL/L" in quotes
-#'@param model, "full", "nomass", "nosex", "null" in quotes
-#'@param DF1, dataset to use: same_sex_social or diff_sex_social
+#'@param fit_method "PQL" or" PQL/L" in quotes
+#'@param model "full", "nomass", "nosex", "null" in quotes
+#'@param DF1 dataset to use: same_sex_social or diff_sex_social
 #'@return a list (fitted model with spaMM)
 #'@import spaMM
 #'@export
@@ -164,9 +164,9 @@ fit_social <- function(fit_method, model, DF1){
 #'Fits the models when the heaviest individual is focal.
 #'
 #'@name  fit_body_mass
-#'@param fit_method, "PQL" or "PQL/L" in quotes
-#'@param model, "full", "nosocial", "nosex", "null" in quotes
-#'@param DF1, dataset to use: same_sex_weight or diff_sex_weight
+#'@param fit_method "PQL" or "PQL/L" in quotes
+#'@param model "full", "nosocial", "nosex", "null" in quotes
+#'@param DF1 dataset to use: same_sex_weight or diff_sex_weight
 #'@return a list (fitted model with spaMM)
 #'@export
 #'@examples
@@ -285,9 +285,9 @@ fit_body_mass <- function(fit_method, model, DF1) {
 #'this function fits the models when the female is focal.
 #'
 #'@name  fit_sex
-#'@param fit_method, "PQL" or "PQL/L" in quotes
-#'@param model, "full", "nosocial", "nomass", "null" in quotes
-#'@param DF1, dataset to use: diff_sex_sex
+#'@param fit_method "PQL" or "PQL/L" in quotes
+#'@param model "full", "nosocial", "nomass", "null" in quotes
+#'@param DF1 dataset to use: diff_sex_sex
 #'@return a list (fitted model with spaMM)
 #'@export
 #'@examples
@@ -378,8 +378,8 @@ fit_sex <- function(model, fit_method, DF1){
 #'the native in interclan context.
 #'
 #'@name  fit_resid
-#'@param fit_method, "PQL" or "PQL/L"
-#'@param DF1, dataset to use: resid_social
+#'@param fit_method "PQL" or "PQL/L"
+#'@param DF1 dataset to use: resid_social
 #'@return a list (fitted model with spaMM)
 #'@export
 #'@examples
