@@ -2,7 +2,7 @@
 % Please edit documentation in R/Plots.R
 \name{plot_sex}
 \alias{plot_sex}
-\title{Plot2 sex panel (used internally)}
+\title{Plot1 sex panel (used internally)}
 \usage{
 plot_sex(DF)
 }
