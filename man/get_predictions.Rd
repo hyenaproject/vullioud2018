@@ -15,7 +15,7 @@ a DF with prediction and 95 confidence interval
 \description{
 Gets the predictions of the models (no newdata needed). It uses the
 spaMM::predict method which compute, in addition to the fitted value
-the 95 wald CI.
+the 95 Wald CI.
 }
 \examples{
 data(mod_sex_null_diff_PQL)

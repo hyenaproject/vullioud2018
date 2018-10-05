@@ -31,7 +31,7 @@ corresponding functions.
 ###  Basic information about the data  ###
 ##########################################
 
-### The main data set contains > 4258 one-on-one interactions with clear dominance
+### The main data set contains 4258 one-on-one interactions with clear dominance
 ### display. It contains all the variables needed to run the models and
 ### the different analysis presented in the manuscript:
 ### - the IDs of both interacting parties (focal, other),
@@ -51,30 +51,31 @@ head(d1)
 ###  Creating the different datasets  ###
 #########################################
 
-### As each set of models require a different focal individual,
-### the datasets had to be reframed. Simillarily, as models were fitted
-### separately for intra-sex and inter-sex interactions, differents datasets
-### were computed.
+### As each set of models requires a different choice of focal individuals,
+### the datasets have to be reshaped. Moreover, as models are fitted
+### separately for intra-sex and inter-sex interactions, different datasets
+### must also be computed.
 
-### first we subsetted the main dataset between intra and inter-sex interactions
+### First, we subset the main dataset between intra and inter-sex interactions
 
 data_same_sex <- prepare_same_sex(d1)
 data_diff_sex <- prepare_different_sex(d1)
 
-### Aditionnaly we created a subset for the SI models testing the interactions in which
-### the focal individual is a migrant with higher social support in interclan
-### interaction.
+### Additionally, we create a subset for the models in Supplementary Materials
+### testing the interactions in which the focal individual is a migrant 
+### with higher social support in interclan interactions.
 
 data_resid <- prepare_resid(d1)
 
-### each models has a different dataset: they were created as follow:
+### Each model relies on a different dataset: they are created as follow:
+
 ### SOCIAL SUPPORT MODELS: higest social support as focal
 
 same_sex_social <- create_DF_social(data_same_sex)
 diff_sex_social <- create_DF_social(data_diff_sex)
 resid_social <- create_DF_social(data_resid)
 
-### BODY MASS MODELS: higest body mass as focal
+### BODY MASS MODELS: highest body mass as focal
 
 diff_sex_weight <- create_DF_weight(data_diff_sex)
 same_sex_weight <- create_DF_weight(data_same_sex)
@@ -88,42 +89,42 @@ diff_sex_sex <- create_DF_sex(data_diff_sex)
 ###  MODELS  ###
 ################
 
-### AS the models take a long time to fits we just present here the nulls
-### models used for the main text and for the plots. All models can be fitted
-### with the adequate function by changing the fit_method and model
-### arguments, please look at the specific function help file for
-### more information. The five models presented below are accessible in
-### the data of the package.
+### As the models take a long time to fit we only present here the null
+### model fits used for the main text and for the plots. All models can be fitted
+### with the adequate function by changing the argument fit_method and model,
+### please look at the help file for the specific functions for
+### more information. The five models presented below are readily available in
+### as companion data of this package.
 
 \dontrun{
 ### SOCIAL SUPPORT MODELS:
 
 mod_social_null_diff_PQL <- fit_social(fit_method = "PQL",
-                             model = "null",
-                             DF1 = diff_sex_social)
+                                      model = "null",
+                                      DF1 = diff_sex_social)
 
 mod_social_null_same_PQL <- fit_social(fit_method = "PQL",
-                             model = "null",
-                             DF1 = same_sex_social)
+                                      model = "null",
+                                      DF1 = same_sex_social)
 
 
 ### BODY MASS MODELS:
 
 mod_mass_null_same_PQL <- fit_body_mass(fit_method = "PQL",
-                             model = "null",
-                             DF1 = same_sex_weight)
+                                       model = "null",
+                                       DF1 = same_sex_weight)
 
 mod_mass_null_diff_PQL <- fit_body_mass(fit_method = "PQL",
-                             model = "null",
-                             DF1 = diff_sex_weight)
+                                       model = "null",
+                                       DF1 = diff_sex_weight)
 
 ### SEX MODELS:
 
 mod_sex_null_diff_PQL <- fit_sex(fit_method = "PQL",
-                             model = "null",
-                             DF1 = diff_sex_sex)
+                                model = "null",
+                                DF1 = diff_sex_sex)
 
-### to access the models run:
+### To access the models stored in the package, run:
 
 data(mod_social_null_diff_PQL)
 data(mod_social_null_same_PQL)
@@ -138,7 +139,7 @@ data(mod_sex_null_diff_PQL)
 ###  STATISTICS  ###
 ####################
 
-### We created four wrap-up functions to access the main statistics used in the
+### We created four wrapping functions to access the main statistics used in the
 ### manuscript.
 
 ### NOTE: Be aware that the statistics presented in the manuscript were
@@ -147,23 +148,27 @@ data(mod_sex_null_diff_PQL)
 ### results are thus slightly different.
 
 
-### - get_predictions() function gives the predictions and the 95\%
-### confidence interval around those prediction.
+### - get_predictions() returns the predictions and the 95\%
+### confidence interval around those predictions:
 
 data(mod_social_null_diff_PQL)
+
 \dontrun{
 get_predictions(mod_social_null_diff_PQL)
 }
 
-### - get_AIC() functions return the marginal AIC of the model
+### - get_AIC() returns the marginal AIC of the model:
+
 x <- get_AIC(mod_social_null_diff_PQL, name = "mod_social_null_diff_PQL")
 as.data.frame(x)
 
-### - get_TJUR() functions return the Tjur's coefficient of discrimination D.
+### - get_TJUR() returns the Tjur's coefficient of discrimination D:
+
 x2 <- get_TJUR(mod_social_null_diff_PQL, name = "mod_social_null_diff_PQL")
 as.data.frame(x2)
 
-###  get_logLik() return the loglikelyhood of the model
+###  get_logLik() returns the log likelihood of the model:
+
 x3 <- get_logLik(mod_social_null_diff_PQL, name = "mod_social_null_diff_PQL")
 as.data.frame(x3)
 
@@ -171,17 +176,7 @@ as.data.frame(x3)
 ###############
 ###  PLOTS  ###
 ###############
-### we present here the two plots of the main text.
-
-### PLOT2: the second plot represents the relatedness at different times
-
-data(females_relat)
-data(migrants_relat)
-data(natives_relat)
-
-plot2(DF_female = females_relat,
-     DF_migrant = migrants_relat,
-     DF_native = natives_relat, PDF = TRUE)
+### we plot here the two plots of the main text.
 
 ### PLOT1: the first plots display the predictions of the five main models.
 
@@ -191,12 +186,22 @@ data(mod_mass_null_diff_PQL)
 data(mod_mass_null_same_PQL)
 data(mod_sex_null_diff_PQL)
 
-plot1(
-mod_social_null_diff_PQL,
-mod_social_null_same_PQL,
-mod_mass_null_diff_PQL,
-mod_mass_null_same_PQL,
-mod_sex_null_diff_PQL, 
-PDF = TRUE)
+plot1(mod_social_null_diff_PQL,
+     mod_social_null_same_PQL,
+     mod_mass_null_diff_PQL,
+     mod_mass_null_same_PQL,
+     mod_sex_null_diff_PQL, 
+     PDF = TRUE)
+     
+### PLOT2: the second plot represents the relatedness at different times.
+
+data(females_relat)
+data(migrants_relat)
+data(natives_relat)
+
+plot2(DF_female = females_relat,
+     DF_migrant = migrants_relat,
+     DF_native = natives_relat, PDF = TRUE)
+
 }
 \keyword{package}

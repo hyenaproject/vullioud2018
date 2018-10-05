@@ -20,6 +20,7 @@ the native in interclan context.
 }
 \examples{
 \dontrun{
+data(resid_social)
 resid_mod <- fit_resid(fit_method = "PQL", DF1 = resid_social)
 }
 }

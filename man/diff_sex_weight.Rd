@@ -4,12 +4,12 @@
 \name{diff_sex_weight}
 \alias{diff_sex_weight}
 \title{different sex weight}
-\format{A data frame with 1109 interactiosn and 10 variables}
+\format{A data frame with 1109 interactions and 10 variables}
 \usage{
 data(diff_sex_weight)
 }
 \description{
 A dataset containing the interaction of all different sex interaction with
-the individuals with the hightest body mass as focal
+the individuals with the highest body mass as focal
 }
 \keyword{datasets}

@@ -21,27 +21,28 @@ this function fits the models when the female is focal.
 }
 \examples{
 \dontrun{
+data(diff_sex_sex)
 mod_sex_full_diff_PQL <- fit_sex(fit_method = "PQL",
                                 model = "full",
                                 DF1 = diff_sex_sex)
 mod_sex_full_diff_PQLL <- fit_sex(fit_method = "PQL/L",
                                  model = "full",
                                  DF1 = diff_sex_sex)
-                             
+
 mod_sex_nosocial_diff_PQL <-fit_sex(fit_method = "PQL",
                                    model = "nosocial",
                                    DF1 = diff_sex_sex)
 mod_sex_nosocial_diff_PQLL <- fit_sex(fit_method = "PQL/L",
                                      model = "nosocial",
                                      DF1 = diff_sex_sex)
-                             
+
 mod_sex_nomass_diff_PQL <- fit_sex(fit_method = "PQL",
                                   model = "nomass",
                                   DF1 = diff_sex_sex)
 mod_sex_nomass_diff_PQLL <- fit_sex(fit_method = "PQL/L",
                                    model = "nomass",
                                    DF1 = diff_sex_sex)
-                             
+
 mod_sex_null_diff_PQL <- fit_sex(fit_method = "PQL",
                                 model = "null",
                                 DF1 = diff_sex_sex)

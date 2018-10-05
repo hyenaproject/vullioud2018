@@ -10,7 +10,7 @@ flip_DF_social(DF1)
 \item{DF1}{data frame}
 }
 \value{
-a df with higest social support as focal
+a df with highest social support as focal
 }
 \description{
 Reverses all interactions in which the focal has a lower social support.

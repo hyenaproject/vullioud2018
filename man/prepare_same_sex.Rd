@@ -15,7 +15,7 @@ a filtered data frames
 \description{
 Keeps the interaction between members of the same sex,
 selects the variables of interest, renames the type of
-interaction and creates a binomial version fo the social support and
+interaction and creates a binomial version of the social support and
 delta weight variables.
 }
 \examples{

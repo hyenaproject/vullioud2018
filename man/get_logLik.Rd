@@ -12,7 +12,7 @@ get_logLik(model, name)
 \item{name}{name of the model}
 }
 \description{
-Wrapper arround logLik.
+Wrapper around logLik.
 }
 \note{
 Returns a tibble, so be aware of the automatic rounding.

@@ -21,55 +21,58 @@ Fits the models when the heaviest individual is focal.
 }
 \examples{
 \dontrun{
+data(same_sex_weight)
+data(diff_sex_weight)
+
 mod_mass_full_same_PQL <- fit_body_mass(fit_method = "PQL",
                                        model = "full",
                                        DF1 = same_sex_weight)
 mod_mass_full_diff_PQL <- fit_social(fit_method = "PQL",
                                     model = "full",
                                     DF1 = diff_sex_weight)
-                             
+
 mod_mass_full_same_PQLL <- fit_social(fit_method = "PQL/L",
                                      model = "full",
                                      DF1 = same_sex_weight)
 mod_mass_full_diff_PQLL <- fit_social(fit_method = "PQL/L",
                                      model = "full",
                                      DF1 = diff_sex_weight)
-                             
+
 mod_mass_nosocial_same_PQL <- fit_social(fit_method = "PQL",
                                         model = "nosocial",
                                         DF1 = same_sex_weight)
 mod_mass_nosocial_diff_PQL <- fit_social(fit_method = "PQL",
                                         model = "nosocial",
                                         DF1 = diff_sex_weight)
-                             
+
 mod_mass_nosocial_same_PQLL <- fit_social(fit_method = "PQL/L",
                                          model = "nosocial",
                                          DF1 = same_sex_weight)
 mod_mass_nosocial_diff_PQLL <- fit_social(fit_method = "PQL/L",
                                          model = "nosocial",
                                          DF1 = diff_sex_weight)
-                             
+
 mod_mass_nosex_same_PQL <- fit_social(fit_method = "PQL",
                                      model = "nosex",
                                      DF1 = same_sex_weight)
 mod_mass_nosex_diff_PQL <- fit_social(fit_method = "PQL",
                                      model = "nosex",
                                      DF1 = diff_sex_weight)
-                             
+
 mod_mass_nosex_same_PQLL <- fit_social(fit_method = "PQL/L",
                                       model = "nosex",
                                       DF1 = same_sex_weight)
 mod_mass_nosex_diff_PQLL <- fit_social(fit_method = "PQL/L",
                                       model = "nosex",
                                       DF1 = diff_sex_weight)
-                             
+
 mod_mass_null_same_PQL <- fit_social(fit_method = "PQL",
                                     model = "null",
                                     DF1 = same_sex_weight)
 mod_mass_null_diff_PQL <- fit_social(fit_method = "PQL",
                                     model = "null",
                                     DF1 = diff_sex_weight)
-                             
+
 mod_mass_null_same_PQLL <- fit_social(fit_method = "PQL/L",
                                      model = "null",
                                      DF1 = same_sex_weight)

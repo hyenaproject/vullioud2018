@@ -8,7 +8,7 @@
 data(mod_mass_null_same_PQL)
 }
 \description{
-Model when the individul with the highest body mass is focal
+Model when the individual with the highest body mass is focal
 in intrasex interactions.
 the model is null (intercept and type of interaction) and is fitted with PQL
 }

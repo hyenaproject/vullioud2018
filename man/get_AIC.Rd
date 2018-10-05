@@ -18,8 +18,7 @@ a tibble: be aware of the automatic rounding
 Wrapper around the spaMM::AIC method.
 }
 \note{
-Returns a tibble so be aware of the auto-
-matic rounding.
+Returns a tibble so be aware of the automatic rounding.
 }
 \examples{
 data(mod_social_null_diff_PQL)

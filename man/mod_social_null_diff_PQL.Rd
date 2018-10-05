@@ -8,7 +8,7 @@
 data(mod_social_null_diff_PQL)
 }
 \description{
-Model when the individul with the highest social support is focal
+Model when the individual with the highest social support is focal
 in intersex interactions.
 the model is null (only intercept and type of interaction) and is fitted with PQL
 }

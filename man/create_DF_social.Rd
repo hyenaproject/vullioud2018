@@ -10,7 +10,7 @@ create_DF_social(DF1)
 \item{DF1}{The processed data for same sex or different sex}
 }
 \value{
-a DF with higest social support as focal
+a DF with highest social support as focal
 }
 \description{
 this function create the data use for the model with social support as focal,

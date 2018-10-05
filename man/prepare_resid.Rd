@@ -13,10 +13,10 @@ prepare_resid(DF1)
 a filtered data frames
 }
 \description{
-Keeps the interclan interactions in which the individuals whith the highest
+Keeps the interclan interactions in which the individuals with the highest
 social support is a migrant and its opponent a native.
 It also selects the variables of interest, renames the type of
-interaction and creates a binomial version fo the social support and
+interaction and creates a binomial version of the social support and
 delta weight variables.
 }
 \examples{

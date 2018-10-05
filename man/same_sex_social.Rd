@@ -4,7 +4,7 @@
 \name{same_sex_social}
 \alias{same_sex_social}
 \title{same sex social}
-\format{A data frame with 3024 interactiosn and 10 variables}
+\format{A data frame with 3024 interactions and 10 variables}
 \usage{
 data(same_sex_social)
 }
