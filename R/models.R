@@ -37,18 +37,18 @@ buildcorrsigned <- function(id1, id2, type) {
   # Matrix decomposition for using sparse matrices
   # sym_eigen gives $u (vecteurs propres) and $d (valeurs propres)
   # corrM = U D t(U)
-  ssvd <- spaMM::sym_eigen(M)
-  goodpos <- ssvd$d > exp(-20)
-  amatrix <- ssvd$u[, goodpos]
-  dcorrm <- diag(x = ssvd$d[goodpos])
-  rownames(amatrix) <- rownames(M)
-  colnames(amatrix) <- rownames(dcorrm) <- seq(ncol(dcorrm))
+  # ssvd <- spaMM::sym_eigen(M)
+  # goodpos <- ssvd$d > exp(-20)
+  # amatrix <- ssvd$u[, goodpos]
+  # dcorrm <- diag(x = ssvd$d[goodpos])
+  # rownames(amatrix) <- rownames(M)
+  # colnames(amatrix) <- rownames(dcorrm) <- seq(ncol(dcorrm))
 
-  print(paste("We want something close to 0, 0 to make sure that matrix
-              decomposition is correct. Result =",
-              range(ssvd$u %*% diag(ssvd$d) %*% t(ssvd$u) -M)))
+  # print(paste("We want something close to 0, 0 to make sure that matrix
+  #             decomposition is correct. Result =",
+  #             range(ssvd$u %*% diag(ssvd$d) %*% t(ssvd$u) -M)))
 
-  return(list(corrM = M, pairsID = pairs, Amatrix = amatrix, Dcorrm = dcorrm))
+  return(list(corrM = M, pairsID = pairs)) #, Amatrix = amatrix, Dcorrm = dcorrm))
 }
 
 ################################################################################
@@ -115,7 +115,7 @@ buildcorrsigned <- function(id1, id2, type) {
 #'                              DF1 = diff_sex_social)
 #'                              }
 fit_social <- function(fit_method, model, DF1){
-
+  require(spaMM, quietly = T)
   corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
   DF1$pairsID <- corr.obj$pairsID
 
@@ -123,14 +123,14 @@ data_mod <- DF1
 data_mod$win_social <- DF1$win
 
 if (model == "full") {
-fitme(win_social ~ type * (sex + body_mass_bin) + corrMatrix(1|pairsID),
+spaMM::fitme(win_social ~ type * (sex + body_mass_bin) + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
       control.HLfit = list(LevenbergM = TRUE),
       verbose = c(TRACE = 1L))
 } else if (model == "nosex") {
-fitme(win_social ~ type * body_mass_bin + corrMatrix(1|pairsID),
+spaMM::fitme(win_social ~ type * body_mass_bin + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -138,7 +138,7 @@ fitme(win_social ~ type * body_mass_bin + corrMatrix(1|pairsID),
       verbose = c(TRACE = 1L))
 } else if (model == "nomass") {
 
-fitme(win_social ~ type * sex + corrMatrix(1|pairsID),
+spaMM::fitme(win_social ~ type * sex + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -146,7 +146,7 @@ fitme(win_social ~ type * sex + corrMatrix(1|pairsID),
       verbose = c(TRACE = 1L))
 } else if (model == "null") {
 
-fitme(win_social ~ type + corrMatrix(1|pairsID),
+spaMM::fitme(win_social ~ type + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -219,7 +219,7 @@ fitme(win_social ~ type + corrMatrix(1|pairsID),
 #' }
 
 fit_body_mass <- function(fit_method, model, DF1) {
-
+  require(spaMM, quietly = T)
 corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
 DF1$pairsID <- corr.obj$pairsID
 
@@ -228,7 +228,7 @@ data_mod$win_heavy <- data_mod$win
 
 if(model == "full"){
 
-fitme(win_heavy ~ type * (sex + social_sup_bin) + corrMatrix(1|pairsID),
+spaMM::fitme(win_heavy ~ type * (sex + social_sup_bin) + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -237,7 +237,7 @@ fitme(win_heavy ~ type * (sex + social_sup_bin) + corrMatrix(1|pairsID),
 
 } else if (model == "nosex") {
 
-fitme(win_heavy ~ type * social_sup_bin + corrMatrix(1|pairsID),
+spaMM::fitme(win_heavy ~ type * social_sup_bin + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -246,7 +246,7 @@ fitme(win_heavy ~ type * social_sup_bin + corrMatrix(1|pairsID),
 
 } else if (model == "nosocial") {
 
-fitme(win_heavy ~ type * sex + corrMatrix(1|pairsID),
+spaMM::fitme(win_heavy ~ type * sex + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -254,7 +254,7 @@ fitme(win_heavy ~ type * sex + corrMatrix(1|pairsID),
       verbose = c(TRACE = 1L))
 } else if (model == "null"){
 
-fitme(win_heavy ~ type + corrMatrix(1|pairsID),
+spaMM::fitme(win_heavy ~ type + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -304,6 +304,7 @@ print("error, not a valid model argument")
 #' }
 #'
 fit_sex <- function(model, fit_method, DF1){
+  require(spaMM, quietly = T)
 corr.obj <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
 DF1$pairsID <- corr.obj$pairsID
 
@@ -313,7 +314,7 @@ data_mod$win_female <- data_mod$win
 
 
 if (model == "full"){
-fitme(win_female ~ type * (social_sup_bin + body_mass_bin) + corrMatrix(1|pairsID),
+spaMM::fitme(win_female ~ type * (social_sup_bin + body_mass_bin) + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -322,7 +323,7 @@ fitme(win_female ~ type * (social_sup_bin + body_mass_bin) + corrMatrix(1|pairsI
 
 } else if (model == "nosocial"){
 
-fitme(win_female ~ type * body_mass_bin + corrMatrix(1|pairsID),
+spaMM::fitme(win_female ~ type * body_mass_bin + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -331,7 +332,7 @@ fitme(win_female ~ type * body_mass_bin + corrMatrix(1|pairsID),
 
 } else if (model == "nomass") {
 
-fitme(win_female ~ type * social_sup_bin + corrMatrix(1|pairsID),
+spaMM::fitme(win_female ~ type * social_sup_bin + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -339,7 +340,7 @@ fitme(win_female ~ type * social_sup_bin + corrMatrix(1|pairsID),
       verbose = c(TRACE = 1L))
 
 } else if (model == "null") {
-fitme(win_female ~ type + corrMatrix(1|pairsID),
+spaMM::fitme(win_female ~ type + corrMatrix(1|pairsID),
       corrMatrix = corr.obj$corrM,
       family = "binomial", data = data_mod,
       method = paste(fit_method),
@@ -367,8 +368,7 @@ fitme(win_female ~ type + corrMatrix(1|pairsID),
 #'}
 
 fit_resid <- function(fit_method, DF1){
-
-
+  require(spaMM, quietly = T)
 corr.obj2 <- buildcorrsigned(DF1$focal, DF1$other, DF1$type)
 DF1$pairsID <- corr.obj2$pairsID
 
