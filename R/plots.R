@@ -143,7 +143,7 @@ return(x2)
 #' Plot prediction for mass and social panels (used internally)
 #'
 #' Plots the predictions for the mass and social models. These
-#' predictions are computed and formated inside the plot2 function.
+#' predictions are computed and formatted inside the plot2 function.
 #'
 #'@name plot_intra_inter
 #'@param DF data frame (created inside the plot2 function)
@@ -182,7 +182,7 @@ plot_intra_inter <- function(DF) {
 #' Plot1 sex panel (used internally)
 #'
 #' Plots the predictions for sex model. These
-#' predictions are computed and formated inside the plot2 function.
+#' predictions are computed and formatted inside the plot2 function.
 #'
 #'@name plot_sex
 #'@param DF a data frame (created inside the plot2 function)
@@ -251,10 +251,6 @@ plot1 <- function(Mod_so_diff,
 
   type <- pred <- inf <- sup <- pos <- Model <- pos2 <- NULL
 
-  PPA <-c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-  PPA_legend <-  c("#000000", "#56B4E9", "#009E73", "#E69F00")
-
-
   ############### First tweak the data // get the predictions
   soss3 <-  get_and_clean_prediction(Mod_sex) %>%
   dplyr::mutate(Model = "SEX", 
@@ -264,40 +260,34 @@ plot1 <- function(Mod_so_diff,
   dplyr::mutate(names =  c("Intra-Native", "Intra-Mixed", "Interclan"))
 
 ################ weight
-weight_intra <- get_and_clean_prediction(Mod_mass_same) %>%
-  dplyr::mutate(Model = "WEIGHT_intra")
-
-weight <-get_and_clean_prediction(Mod_mass_diff) %>%
-  dplyr::mutate(Model = "WEIGHT")
-
-soss2 <- dplyr::bind_rows(weight, weight_intra) %>%
+  soss2 <-get_and_clean_prediction(Mod_mass_diff) %>%
+  dplyr::mutate(Model = "WEIGHT") %>%
+  dplyr::bind_rows(get_and_clean_prediction(Mod_mass_same) %>%
+                     dplyr::mutate(Model = "WEIGHT_intra")) %>%
   dplyr::mutate(pos = ifelse(type == "inter", 1, ifelse(type == "mix", 2, ifelse(type == "nat", 3, 4))), 
-                pos2 = ifelse(Model == "WEIGHT", pos - 0.1, pos + 0.1), 
+                pos2 = ifelse(type == "mig", 4, ifelse(Model == "WEIGHT", pos - 0.1, pos + 0.1)), 
                 plotname = "Body mass") %>%
   dplyr::arrange(pos2) 
 
-soss2$pos2[soss2$type == "mig"] <- 4
 
 ############# social support
-
-sos_intra <- get_and_clean_prediction(Mod_so_same) %>%
-  dplyr::mutate(Model = "SO_intra")
-
-sos <- get_and_clean_prediction(Mod_so_diff) %>%
-  dplyr::mutate(Model = "SO")
-
-soss <- dplyr::bind_rows(sos, sos_intra) %>%
+  soss <- get_and_clean_prediction(Mod_so_diff) %>%
+  dplyr::mutate(Model = "SO") %>% 
+  dplyr::bind_rows(get_and_clean_prediction(Mod_so_same) %>%
+                     dplyr::mutate(Model = "SO_intra")) %>%
   dplyr::mutate(pos = ifelse(type == "inter", 1, ifelse(type == "mix", 2, ifelse(type == "nat", 3, 4))), 
-                pos2 = ifelse(Model == "SO", pos - 0.1, pos + 0.1), 
+                pos2 = ifelse(type == "mig", 4, ifelse(Model == "SO", pos - 0.1, pos + 0.1)), 
                 plotname = "Social support") %>%
   dplyr::arrange(pos2)
 
-soss$pos2[soss$type == "mig"] <- 4
-
-
 
 ############# MAKE THE PLOT
-social_plot <- plot_intra_inter(soss) +
+
+  PPA <-c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+  PPA_legend <-  c("#000000", "#56B4E9", "#009E73", "#E69F00")
+
+
+  social_plot <- plot_intra_inter(soss) +
   ggplot2::theme(
         plot.margin = ggplot2::margin(t = 3, r = 0, b = 3, l = 3, "pt"),
         axis.text.x = ggplot2::element_text(angle = 55, hjust = 1, color = PPA_legend, 
