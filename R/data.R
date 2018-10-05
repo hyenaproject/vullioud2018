@@ -38,7 +38,7 @@ NULL
 #' @keywords datasets
 #' @name data_resid
 #' @usage data(data_resid)
-#' @format A data frame with 153 interactiosn and 10 variables
+#' @format A data frame with 153 interactions and 10 variables
 NULL
 
 ###############################################################################
@@ -52,7 +52,7 @@ NULL
 #' @keywords datasets
 #' @name diff_sex_social
 #' @usage data(diff_sex_social)
-#' @format A data frame with 1109 interactiosn and 10 variables
+#' @format A data frame with 1109 interactions and 10 variables
 NULL
 
 #' same sex social
@@ -63,7 +63,7 @@ NULL
 #' @keywords datasets
 #' @name same_sex_social
 #' @usage data(same_sex_social)
-#' @format A data frame with 3024 interactiosn and 10 variables
+#' @format A data frame with 3024 interactions and 10 variables
 NULL
 
 ###############################################################################
@@ -76,7 +76,7 @@ NULL
 #' @keywords datasets
 #' @name diff_sex_sex
 #' @usage data(diff_sex_sex)
-#' @format A data frame with 1109 interactiosn and 10 variables
+#' @format A data frame with 1109 interactions and 10 variables
 NULL
 
 ###############################################################################
@@ -84,12 +84,12 @@ NULL
 #' different sex weight
 #'
 #' A dataset containing the interaction of all different sex interaction with
-#' the individuals with the hightest body mass as focal
+#' the individuals with the highest body mass as focal
 #' @docType data
 #' @keywords datasets
 #' @name diff_sex_weight
 #' @usage data(diff_sex_weight)
-#' @format A data frame with 1109 interactiosn and 10 variables
+#' @format A data frame with 1109 interactions and 10 variables
 NULL
 
 #' same sex weight
@@ -100,7 +100,7 @@ NULL
 #' @keywords datasets
 #' @name same_sex_weight
 #' @usage data(same_sex_weight)
-#' @format A data frame with 3024 interactiosn and 10 variables
+#' @format A data frame with 3024 interactions and 10 variables
 NULL
 
 ###############################################################################
@@ -114,7 +114,7 @@ NULL
 #' @keywords datasets
 #' @name resid_social
 #' @usage data(resid_social)
-#' @format A data frame with 153 interactiosn and 10 variables
+#' @format A data frame with 153 interactions and 10 variables
 NULL
 
 ################################################################################
@@ -159,7 +159,7 @@ NULL
 
 #' MODEL: mod_social_null_diff_PQL
 #'
-#' Model when the individul with the highest social support is focal
+#' Model when the individual with the highest social support is focal
 #' in intersex interactions.
 #' the model is null (only intercept and type of interaction) and is fitted with PQL
 #' @docType data
@@ -169,7 +169,7 @@ NULL
 NULL
 
 #' MODEL: mod_social_null_diff_PQL
-#' Model when the individul with the highest social support is focal
+#' Model when the individual with the highest social support is focal
 #' in intrasex interactions.
 #' the model is null (intercept and type of interaction) and is fitted with PQL
 #' @docType data
@@ -180,7 +180,7 @@ NULL
 
 #'MODEL: mod_mass_null_diff_PQL
 #'
-#' Model when the individul with the highest body mass is focal
+#' Model when the individual with the highest body mass is focal
 #' in intersex interactions.
 #' the model is null (intercept and type of interaction) and is fitted with PQL
 #' @docType data
@@ -191,7 +191,7 @@ NULL
 
 #'MODEL: mod_mass_null_same_PQL
 #'
-#' Model when the individul with the highest body mass is focal
+#' Model when the individual with the highest body mass is focal
 #' in intrasex interactions.
 #' the model is null (intercept and type of interaction) and is fitted with PQL
 #' @docType data
