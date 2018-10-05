@@ -1,4 +1,4 @@
-#' Prepare the data for the intrasex interactions
+#' Prepare the data for the same sex interactions
 #'
 #'Keeps the interaction between members of the same sex,
 #'selects the variables of interest, renames the type of
@@ -32,7 +32,7 @@ prepare_same_sex <- function(DF1) {
 }
 
 ###############################################################################
-#' Prepare the data for the intersex interactions
+#' Prepare the data for the interactions between different sexes
 #'
 #'Keeps the interaction between members of different sexes,
 #'selects the variables of interest, renames the type of
