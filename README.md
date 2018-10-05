@@ -1,4 +1,4 @@
-# Vullioud_2018
+# vullioud2018
 
 This is the GitHub repository that hosts the R package ```vullioud2018```.
 
