@@ -17,8 +17,8 @@
 #' computed if wanted, by setting the option: fit_method = "PQL/L, in the
 #' corresponding functions.
 #'
-#' @name hyenaaaa-package
-#' @aliases hyenaaaa-package
+#' @name vullioud2018
+#' @aliases vullioud2018
 #' @docType package
 #' @keywords package
 #' @examples
@@ -106,11 +106,11 @@
 #'
 #'### BODY MASS MODELS:
 #'
-#' mod_mass_null_same_PQL <- fit_social(fit_method = "PQL",
+#' mod_mass_null_same_PQL <- fit_body_mass(fit_method = "PQL",
 #'                              model = "null",
 #'                              DF1 = same_sex_weight)
 #'
-#'mod_mass_null_diff_PQL <- fit_social(fit_method = "PQL",
+#'mod_mass_null_diff_PQL <- fit_body_mass(fit_method = "PQL",
 #'                              model = "null",
 #'                              DF1 = diff_sex_weight)
 #'
