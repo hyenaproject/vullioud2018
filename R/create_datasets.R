@@ -8,7 +8,6 @@
 #'@name prepare_same_sex
 #'@param DF1 The interactions database (d1)
 #'@return a filtered data frames
-#'@importFrom magrittr `%>%`
 #'@export
 #'@examples
 #'data(d1)
@@ -43,7 +42,6 @@ prepare_same_sex <- function(DF1) {
 #'@name prepare_different_sex
 #'@param DF1 The interactions database (d1)
 #'@return a filtered data frames
-#'@importFrom magrittr `%>%`
 #'@export
 #'@examples
 #'data(d1)
@@ -80,7 +78,6 @@ prepare_different_sex <- function(DF1) {
 #'@name prepare_resid
 #'@param DF1 The interactions database (d1)
 #'@return a filtered data frames
-#'@importFrom magrittr `%>%`
 #'@export
 #'@examples
 #'data(d1)
@@ -114,7 +111,6 @@ prepare_resid <- function(DF1) {
 #'@name flip_DF_social
 #'@param DF1 data frame
 #'@return a df with higest social support as focal
-#'@importFrom magrittr `%>%`
 #'@export
 #'
 flip_DF_social <- function(DF1) {
@@ -144,7 +140,6 @@ flip_DF_social <- function(DF1) {
 #'@name create_DF_social
 #'@param DF1 The processed data for same sex or different sex
 #'@return a DF with higest social support as focal
-#'@importFrom magrittr `%>%`
 #'@export
 #'
 #'@examples
@@ -171,7 +166,6 @@ create_DF_social <- function(DF1){
 #'@name flip_DF_sex
 #'@param DF1 The processed data for intersex interactions
 #'@return a DF with females as focal
-#'@importFrom magrittr `%>%`
 #'@export
 
 flip_DF_sex <- function(DF1) {
@@ -200,7 +194,6 @@ flip_DF_sex <- function(DF1) {
 #'@name create_DF_sex
 #'@param DF1 The processed data for different sex
 #'@return a DF with females as focal
-#'@importFrom magrittr `%>%`
 #'@export
 #'
 #'@examples
@@ -224,7 +217,6 @@ create_DF_sex <- function(DF1){
 #'@name flip_DF_weight
 #'@param DF1 The processed data for same sex or different sex
 #'@return a DF with heaviest as focal
-#'@importFrom magrittr `%>%`
 #'@export
 
 flip_DF_weight <- function(DF1) {
@@ -252,7 +244,6 @@ flip_DF_weight <- function(DF1) {
 #'@name create_DF_weight
 #'@param DF1 The processed data for same sex or different sex
 #'@return a DF with heaviest as focal
-#'@importFrom magrittr `%>%`
 #'@export
 #'
 #'@examples
