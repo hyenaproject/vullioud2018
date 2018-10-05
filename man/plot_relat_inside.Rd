@@ -7,11 +7,11 @@
 plot_relat_inside(DF, legend, labels_x_axis)
 }
 \arguments{
-\item{DF, }{data frame to be plotted: females_relat, migrants_relat or natives_relat}
+\item{DF}{data frame to be plotted: females_relat, migrants_relat or natives_relat}
 
-\item{legend, }{include or not the axis legend (logical)}
+\item{legend}{include or not the axis legend (logical)}
 
-\item{labels_x_axis, }{vector of character to specify the axis labels}
+\item{labels_x_axis}{vector of character to specify the axis labels}
 }
 \description{
 Builds the panel of plot2.
@@ -19,6 +19,6 @@ Builds the panel of plot2.
 \examples{
 data(females_relat)
 plot_relat_inside(DF = females_relat,
-           legend = FALSE,
-           labels_x_axis = c("test", "test"))
+                 legend = FALSE,
+                 labels_x_axis = c("test", "test"))
 }

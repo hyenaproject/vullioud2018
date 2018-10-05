@@ -12,7 +12,7 @@ get_TJUR(model, name)
 \item{name}{name of the model}
 }
 \description{
-compute the Tjur's coefficient of discrimination D
+Compute the Tjur's coefficient of discrimination D.
 }
 \examples{
 data(mod_sex_null_diff_PQL)

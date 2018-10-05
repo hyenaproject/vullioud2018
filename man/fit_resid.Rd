@@ -7,9 +7,9 @@
 fit_resid(fit_method, DF1)
 }
 \arguments{
-\item{fit_method, }{"PQL" or "PQL/L"}
+\item{fit_method}{"PQL" or "PQL/L"}
 
-\item{DF1, }{dataset to use: resid_social}
+\item{DF1}{dataset to use: resid_social}
 }
 \value{
 a list (fitted model with spaMM)

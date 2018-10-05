@@ -15,10 +15,14 @@ get_AIC(model, name)
 a tibble: be aware of the automatic rounding
 }
 \description{
-wrapper around the spaMM::AIC method. return a tibble so be aware of the auto-
-matic rounding
+Wrapper around the spaMM::AIC method.
+}
+\note{
+Returns a tibble so be aware of the auto-
+matic rounding.
 }
 \examples{
 data(mod_social_null_diff_PQL)
 get_AIC(mod_social_null_diff_PQL, "social_null_diff_PQL")
+
 }

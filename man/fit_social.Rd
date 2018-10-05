@@ -7,11 +7,11 @@
 fit_social(fit_method, model, DF1)
 }
 \arguments{
-\item{fit_method, }{"PQL" or" PQL/L" in quotes}
+\item{fit_method}{"PQL" or" PQL/L" in quotes}
 
-\item{model, }{"full", "nomass", "nosex", "null" in quotes}
+\item{model}{"full", "nomass", "nosex", "null" in quotes}
 
-\item{DF1, }{dataset to use: same_sex_social or diff_sex_social}
+\item{DF1}{dataset to use: same_sex_social or diff_sex_social}
 }
 \value{
 a list (fitted model with spaMM)

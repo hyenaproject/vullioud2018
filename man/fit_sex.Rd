@@ -7,11 +7,11 @@
 fit_sex(model, fit_method, DF1)
 }
 \arguments{
-\item{model, }{"full", "nosocial", "nomass", "null" in quotes}
+\item{model}{"full", "nosocial", "nomass", "null" in quotes}
 
-\item{fit_method, }{"PQL" or "PQL/L" in quotes}
+\item{fit_method}{"PQL" or "PQL/L" in quotes}
 
-\item{DF1, }{dataset to use: diff_sex_sex}
+\item{DF1}{dataset to use: diff_sex_sex}
 }
 \value{
 a list (fitted model with spaMM)

@@ -7,7 +7,7 @@
 plot_sex(DF)
 }
 \arguments{
-\item{DF, }{a data frame (created inside the plot2 function)}
+\item{DF}{a data frame (created inside the plot2 function)}
 }
 \description{
 Plots the predictions for sex model. These

@@ -12,10 +12,13 @@ get_logLik(model, name)
 \item{name}{name of the model}
 }
 \description{
-wrapper arround logLik.
-NOTE: Return a tibble so be aware of the automatic rounding
+Wrapper arround logLik.
+}
+\note{
+Returns a tibble, so be aware of the automatic rounding
 }
 \examples{
 data(mod_sex_null_diff_PQL)
 get_logLik(mod_sex_null_diff_PQL, "sex_null_PQL")
+
 }

@@ -7,13 +7,13 @@
 plot2(DF_female, DF_migrant, DF_native, PDF)
 }
 \arguments{
-\item{DF_female, }{females_relat}
+\item{DF_female}{females_relat}
 
-\item{DF_migrant, }{migrants_relat}
+\item{DF_migrant}{migrants_relat}
 
-\item{DF_native, }{natives_relat}
+\item{DF_native}{natives_relat}
 
-\item{PDF, }{a logical to return a PDF version of the plot}
+\item{PDF}{a logical to return a PDF version of the plot}
 }
 \description{
 Creates the second plot of the paper.

@@ -7,11 +7,11 @@
 fit_body_mass(fit_method, model, DF1)
 }
 \arguments{
-\item{fit_method, }{"PQL" or "PQL/L" in quotes}
+\item{fit_method}{"PQL" or "PQL/L" in quotes}
 
-\item{model, }{"full", "nosocial", "nosex", "null" in quotes}
+\item{model}{"full", "nosocial", "nosex", "null" in quotes}
 
-\item{DF1, }{dataset to use: same_sex_weight or diff_sex_weight}
+\item{DF1}{dataset to use: same_sex_weight or diff_sex_weight}
 }
 \value{
 a list (fitted model with spaMM)

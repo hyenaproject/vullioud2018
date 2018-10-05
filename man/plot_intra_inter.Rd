@@ -7,7 +7,7 @@
 plot_intra_inter(DF)
 }
 \arguments{
-\item{DF, }{data frame (created inside the plot2 function)}
+\item{DF}{data frame (created inside the plot2 function)}
 }
 \description{
 Plots the predictions for the mass and social models. These
