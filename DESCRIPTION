@@ -17,7 +17,8 @@ Description: This R package aims at documenting the workflow behind the results 
     package is to fit GLMM models on interactions data with varying 
     focal individuals (for more details see the method section of the article). 
     This package has not been conceived for general use. It serves to document 
-    the steps of our analysis.
+    the steps of our analysis. 
+    DOI: https://dx.doi.org/0.1038/s41559-018-0718-9
 Depends: R (>= 2.10)
 License: GPL (>=2)
 Encoding: UTF-8
