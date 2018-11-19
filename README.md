@@ -8,7 +8,7 @@ This is the GitHub repository that hosts the R package ```vullioud2018```.
 This package aims at documenting how we obtained the
 results for the paper entitled "Social support drives female dominance in the spotted hyaena" by Colin Vullioud,
 Eve Davidian, Bettina Wachter, François Rousset, Alexandre Courtiol & Oliver P. Höner (accepted in Nature Ecology and Evolution),
-DOI: https://dx.doi.org/0.1038/s41559-018-0718-9
+DOI: https://dx.doi.org/10.1038/s41559-018-0718-9
 
 The only planned updates are updates that will be necessary to maintain the compatibility with other packages, so that our code won't break.
 
