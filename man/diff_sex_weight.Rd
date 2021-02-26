@@ -4,7 +4,9 @@
 \name{diff_sex_weight}
 \alias{diff_sex_weight}
 \title{different sex weight}
-\format{A data frame with 1109 interactions and 10 variables}
+\format{
+A data frame with 1109 interactions and 10 variables
+}
 \usage{
 data(diff_sex_weight)
 }
