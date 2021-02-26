@@ -3,7 +3,6 @@
 \docType{package}
 \name{vullioud2018}
 \alias{vullioud2018}
-\alias{vullioud2018-package}
 \title{Social support drives female dominance in the spotted hyena.}
 \description{
 This R package gives the tools to reproduce the main statistical analysis of

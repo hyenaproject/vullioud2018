@@ -4,7 +4,9 @@
 \name{resid_social}
 \alias{resid_social}
 \title{resid social}
-\format{A data frame with 153 interactions and 10 variables}
+\format{
+A data frame with 153 interactions and 10 variables
+}
 \usage{
 data(resid_social)
 }
