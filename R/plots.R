@@ -294,9 +294,9 @@ plot1 <- function(Mod_so_diff,
 
   PPA <-c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
   
-  ## FIX WARNINGS AND REPRODUCIBILITY 2021: The original line is now commented as it vectorisez input to element_text is not 
-  ## supported in ggplot and the behavior might change. One option found beggining 2021 is ggtext::element_markdown that have the
-  ## behaviour we wanted here. For simplicity I just turn the legend black. 
+  ## FIX WARNINGS AND REPRODUCIBILITY 2021: The original line is now commented as providing a vector input to element_text is no longer 
+  ## supported in ggplot and the behavior might change. One option to keep the original formating, found begining 2021,would be to use ggtext::element_markdown.
+  ## Yet, for simplicity I just turned the legend into black. 
   
   # PPA_legend <-  c("#000000", "#56B4E9", "#009E73", "#E69F00")
   PPA_legend <- "black"
