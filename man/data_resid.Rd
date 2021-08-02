@@ -4,7 +4,9 @@
 \name{data_resid}
 \alias{data_resid}
 \title{data resid}
-\format{A data frame with 153 interactions and 10 variables}
+\format{
+A data frame with 153 interactions and 10 variables
+}
 \usage{
 data(data_resid)
 }

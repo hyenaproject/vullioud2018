@@ -4,7 +4,9 @@
 \name{d1}
 \alias{d1}
 \title{base data frame}
-\format{A data frame with 4258 observation and 11 variables}
+\format{
+A data frame with 4258 observation and 11 variables
+}
 \usage{
 data(d1)
 }

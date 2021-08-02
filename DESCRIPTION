@@ -18,12 +18,12 @@ Description: This R package aims at documenting the workflow behind the results 
     focal individuals (for more details see the method section of the article). 
     This package has not been conceived for general use. It serves to document 
     the steps of our analysis. 
-    DOI: https://dx.doi.org/10.1038/s41559-018-0718-9
+    DOI: https://dx.doi.org/10.1038/s41559-018-0718-9.
 Depends: R (>= 2.10)
 License: GPL (>=2)
 Encoding: UTF-8
 LazyData: false
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Imports: dplyr,
     egg,
     ggplot2,

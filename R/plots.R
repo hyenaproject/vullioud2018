@@ -15,9 +15,18 @@
 plot_relat_inside <- function(DF,
                               legend,
                               labels_x_axis) {
-time <- relat <- NULL
+time <- relat <- type <- NULL
 
-  col1 <-  c("#E69F00",  "#009E73", "#56B4E9", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+## FIX_WARNINGS 2021 // remove the cases causing warnings while plotting. NAs, and when the value is bigger than the upper limits of the plot. 
+## As the upper legend is part of the plot and not a proper legend, It is simpler to just remove the single point from the plot
+## than to recreate everything. 
+DF <- stats::na.omit(DF)
+y_plot_limits <- c(0, 6.65)
+DF <- DF[DF$relat <= y_plot_limits[2], ]
+
+
+col1 <-  c("#E69F00",  "#009E73", "#56B4E9", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
   tt2 <- ggplot2::ggplot(DF, ggplot2::aes(time, y = relat,fill = time, col = time), alpha = 0.02) +
     ggplot2::geom_boxplot(width = 0.4, outlier.shape = NA) +
     ggplot2::stat_summary(geom = "crossbar",
@@ -33,7 +42,7 @@ time <- relat <- NULL
                      labels = labels_x_axis) +
     ggplot2::scale_color_manual(values = col1) +
     ggplot2::scale_fill_manual(values = col1) +
-    ggplot2::geom_text(data = DF, ggplot2::aes(x = 1.5, y = 6.6, label = paste(DF$type[1])),
+    ggplot2::geom_text(data = DF, ggplot2::aes(x = 1.5, y = 6.6, label = paste(type[1])),
                        size = 0.35*7,
                        col = "black",
                        inherit.aes = F,
@@ -284,8 +293,13 @@ plot1 <- function(Mod_so_diff,
 ############# MAKE THE PLOT
 
   PPA <-c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-  PPA_legend <-  c("#000000", "#56B4E9", "#009E73", "#E69F00")
-
+  
+  ## FIX WARNINGS AND REPRODUCIBILITY 2021: The original line is now commented as providing a vector input to element_text is no longer 
+  ## supported in ggplot and the behavior might change. One option to keep the original formating, found begining 2021,would be to use ggtext::element_markdown.
+  ## Yet, for simplicity I just turned the legend into black. 
+  
+  # PPA_legend <-  c("#000000", "#56B4E9", "#009E73", "#E69F00")
+  PPA_legend <- "black"
 
   social_plot <- plot_intra_inter(soss) +
   ggplot2::theme(
@@ -369,4 +383,3 @@ get_and_clean_prediction <- function(mod){
                    inf = inf[10],
                    sup = sup[10])
 }
-
