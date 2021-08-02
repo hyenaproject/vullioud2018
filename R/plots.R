@@ -18,7 +18,7 @@ plot_relat_inside <- function(DF,
 time <- relat <- type <- NULL
 
 ## FIX_WARNINGS 2021 // remove the cases causing warnings while plotting. NAs, and when the value is bigger than the upper limits of the plot. 
-## As the upper legend is part of the plot and not a proper legend, It is simpler just to remove the single point from the plot
+## As the upper legend is part of the plot and not a proper legend, It is simpler to just remove the single point from the plot
 ## than to recreate everything. 
 DF <- stats::na.omit(DF)
 y_plot_limits <- c(0, 6.65)
@@ -383,4 +383,3 @@ get_and_clean_prediction <- function(mod){
                    inf = inf[10],
                    sup = sup[10])
 }
-
